@@ -14,6 +14,17 @@
 		B7C919612034B24E00111DBE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B7C919602034B24E00111DBE /* Assets.xcassets */; };
 		B7C919642034B24E00111DBE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C919622034B24E00111DBE /* LaunchScreen.storyboard */; };
 		B7C9196F2034B24E00111DBE /* MovieDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C9196E2034B24E00111DBE /* MovieDBTests.swift */; };
+		B7C9198A2034BC4F00111DBE /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919892034BC4F00111DBE /* NetworkService.swift */; };
+		B7C9198C2034BC6900111DBE /* NetworkServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C9198B2034BC6900111DBE /* NetworkServicing.swift */; };
+		B7C9198E2034BC9B00111DBE /* NetworkRequesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C9198D2034BC9B00111DBE /* NetworkRequesting.swift */; };
+		B7C919932034BD0C00111DBE /* Results.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919922034BD0C00111DBE /* Results.swift */; };
+		B7C919962034BE3A00111DBE /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919952034BE3A00111DBE /* NetworkServiceError.swift */; };
+		B7C919982034BEFF00111DBE /* NetworkProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919972034BEFF00111DBE /* NetworkProviding.swift */; };
+		B7C9199A2034BFAD00111DBE /* NetworkOperationCancalable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919992034BFAD00111DBE /* NetworkOperationCancalable.swift */; };
+		B7C919A22034C1A500111DBE /* NetworkOperationResumable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919A12034C1A500111DBE /* NetworkOperationResumable.swift */; };
+		B7C919A42034C25600111DBE /* NetworkOperationable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919A32034C25600111DBE /* NetworkOperationable.swift */; };
+		B7C919A62034C5D500111DBE /* NetworkServiceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919A52034C5D500111DBE /* NetworkServiceSpec.swift */; };
+		B7C919AA2034E3AD00111DBE /* Result+Equatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919A92034E3AD00111DBE /* Result+Equatable.swift */; };
 		BBDAC912AE065EC29AD65C10 /* Pods_MovieDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B751CE73054580E5A0D498D /* Pods_MovieDB.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +55,17 @@
 		B7C919702034B24E00111DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B7C919792034B24E00111DBE /* MovieDBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBUITests.swift; sourceTree = "<group>"; };
 		B7C9197B2034B24E00111DBE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B7C919892034BC4F00111DBE /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		B7C9198B2034BC6900111DBE /* NetworkServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServicing.swift; sourceTree = "<group>"; };
+		B7C9198D2034BC9B00111DBE /* NetworkRequesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequesting.swift; sourceTree = "<group>"; };
+		B7C919922034BD0C00111DBE /* Results.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Results.swift; sourceTree = "<group>"; };
+		B7C919952034BE3A00111DBE /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		B7C919972034BEFF00111DBE /* NetworkProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProviding.swift; sourceTree = "<group>"; };
+		B7C919992034BFAD00111DBE /* NetworkOperationCancalable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperationCancalable.swift; sourceTree = "<group>"; };
+		B7C919A12034C1A500111DBE /* NetworkOperationResumable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperationResumable.swift; sourceTree = "<group>"; };
+		B7C919A32034C25600111DBE /* NetworkOperationable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkOperationable.swift; sourceTree = "<group>"; };
+		B7C919A52034C5D500111DBE /* NetworkServiceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceSpec.swift; sourceTree = "<group>"; };
+		B7C919A92034E3AD00111DBE /* Result+Equatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Result+Equatable.swift"; sourceTree = "<group>"; };
 		C3D07F6AC7685259E955E4E7 /* Pods_MovieDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MovieDBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C77A654721436C900D1A33FA /* Pods-MovieDBTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDBTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieDBTests/Pods-MovieDBTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,6 +134,8 @@
 		B7C919582034B24E00111DBE /* MovieDB */ = {
 			isa = PBXGroup;
 			children = (
+				B7C919942034BD1500111DBE /* Helpers */,
+				B7C9198F2034BCBC00111DBE /* Extensions */,
 				B7C919872034B8D300111DBE /* Services */,
 				B7C919592034B24E00111DBE /* AppDelegate.swift */,
 				B7C9195B2034B24E00111DBE /* ViewController.swift */,
@@ -128,6 +152,7 @@
 			children = (
 				B7C9196E2034B24E00111DBE /* MovieDBTests.swift */,
 				B7C919702034B24E00111DBE /* Info.plist */,
+				B7C919A52034C5D500111DBE /* NetworkServiceSpec.swift */,
 			);
 			path = MovieDBTests;
 			sourceTree = "<group>";
@@ -152,8 +177,48 @@
 		B7C919882034B8DD00111DBE /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				B7C919A02034C17400111DBE /* Protocols */,
+				B7C919892034BC4F00111DBE /* NetworkService.swift */,
+				B7C919952034BE3A00111DBE /* NetworkServiceError.swift */,
 			);
 			path = Networking;
+			sourceTree = "<group>";
+		};
+		B7C9198F2034BCBC00111DBE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B7C9199B2034C03300111DBE /* Networking */,
+				B7C919A92034E3AD00111DBE /* Result+Equatable.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B7C919942034BD1500111DBE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				B7C919922034BD0C00111DBE /* Results.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B7C9199B2034C03300111DBE /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		B7C919A02034C17400111DBE /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B7C9198B2034BC6900111DBE /* NetworkServicing.swift */,
+				B7C9198D2034BC9B00111DBE /* NetworkRequesting.swift */,
+				B7C919972034BEFF00111DBE /* NetworkProviding.swift */,
+				B7C919992034BFAD00111DBE /* NetworkOperationCancalable.swift */,
+				B7C919A12034C1A500111DBE /* NetworkOperationResumable.swift */,
+				B7C919A32034C25600111DBE /* NetworkOperationable.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -369,7 +434,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7C919A42034C25600111DBE /* NetworkOperationable.swift in Sources */,
+				B7C9199A2034BFAD00111DBE /* NetworkOperationCancalable.swift in Sources */,
+				B7C919982034BEFF00111DBE /* NetworkProviding.swift in Sources */,
 				B7C9195C2034B24E00111DBE /* ViewController.swift in Sources */,
+				B7C919962034BE3A00111DBE /* NetworkServiceError.swift in Sources */,
+				B7C9198E2034BC9B00111DBE /* NetworkRequesting.swift in Sources */,
+				B7C919932034BD0C00111DBE /* Results.swift in Sources */,
+				B7C919AA2034E3AD00111DBE /* Result+Equatable.swift in Sources */,
+				B7C919A22034C1A500111DBE /* NetworkOperationResumable.swift in Sources */,
+				B7C9198C2034BC6900111DBE /* NetworkServicing.swift in Sources */,
+				B7C9198A2034BC4F00111DBE /* NetworkService.swift in Sources */,
 				B7C9195A2034B24E00111DBE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -379,6 +454,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B7C9196F2034B24E00111DBE /* MovieDBTests.swift in Sources */,
+				B7C919A62034C5D500111DBE /* NetworkServiceSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
