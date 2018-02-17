@@ -13,6 +13,7 @@
 		B71DB58D203772B0003608AC /* RESTPaginatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB58C203772B0003608AC /* RESTPaginatorDelegate.swift */; };
 		B71DB58F203776A3003608AC /* RESTPaginatorServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */; };
 		B71DB59320384F12003608AC /* RESTPaginatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB59220384F11003608AC /* RESTPaginatorError.swift */; };
+		B71DB59520384F57003608AC /* RESTPaginatorItemLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB59420384F57003608AC /* RESTPaginatorItemLoadable.swift */; };
 		B7C9195A2034B24E00111DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919592034B24E00111DBE /* AppDelegate.swift */; };
 		B7C9195C2034B24E00111DBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C9195B2034B24E00111DBE /* ViewController.swift */; };
 		B7C9195F2034B24E00111DBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C9195D2034B24E00111DBE /* Main.storyboard */; };
@@ -53,6 +54,7 @@
 		B71DB58C203772B0003608AC /* RESTPaginatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorDelegate.swift; sourceTree = "<group>"; };
 		B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorServiceConfiguration.swift; sourceTree = "<group>"; };
 		B71DB59220384F11003608AC /* RESTPaginatorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTPaginatorError.swift; sourceTree = "<group>"; };
+		B71DB59420384F57003608AC /* RESTPaginatorItemLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorItemLoadable.swift; sourceTree = "<group>"; };
 		B7C919562034B24E00111DBE /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C919592034B24E00111DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7C9195B2034B24E00111DBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				B7154B882038541800DACF64 /* Delegates */,
 				B71DB58820377074003608AC /* RESTPaginatorServicing.swift */,
+				B71DB59420384F57003608AC /* RESTPaginatorItemLoadable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -487,6 +490,7 @@
 				B7C9198C2034BC6900111DBE /* NetworkServicing.swift in Sources */,
 				B71DB58D203772B0003608AC /* RESTPaginatorDelegate.swift in Sources */,
 				B7C9198A2034BC4F00111DBE /* NetworkService.swift in Sources */,
+				B71DB59520384F57003608AC /* RESTPaginatorItemLoadable.swift in Sources */,
 				B71DB59320384F12003608AC /* RESTPaginatorError.swift in Sources */,
 				B71DB58F203776A3003608AC /* RESTPaginatorServiceConfiguration.swift in Sources */,
 				B7C9195A2034B24E00111DBE /* AppDelegate.swift in Sources */,

@@ -36,3 +36,21 @@ extension RESTPaginatorService: RESTPaginatorServicing {
         try load(page: page, force: false)
     }
 }
+
+extension RESTPaginatorService: RESTPaginatorItemLoadable {
+    private func load(itemAtIndex index: UInt, force: Bool) throws {
+        func pageForItem(at index: UInt) -> UInt {
+            return index / batchSize + index % batchSize == 0 ? 1 : 0
+        }
+
+        guard index < numberOfItems else {
+            throw RESTPaginatorError.OutOfRange.item
+        }
+        let page = pageForItem(at: index)
+        try load(page: page, force: force)
+    }
+
+    func load(itemAtIndex index: UInt) throws {
+        try load(itemAtIndex: index, force: false)
+    }
+}
