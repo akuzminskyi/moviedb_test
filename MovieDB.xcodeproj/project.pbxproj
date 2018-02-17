@@ -25,6 +25,9 @@
 		B71DB58F203776A3003608AC /* RESTPaginatorServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */; };
 		B71DB59320384F12003608AC /* RESTPaginatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB59220384F11003608AC /* RESTPaginatorError.swift */; };
 		B71DB59520384F57003608AC /* RESTPaginatorItemLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB59420384F57003608AC /* RESTPaginatorItemLoadable.swift */; };
+		B7C81CE12038D09A0012BF84 /* RESTPaginatorLoaderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CE02038D09A0012BF84 /* RESTPaginatorLoaderable.swift */; };
+		B7C81CE32038D0BE0012BF84 /* RESTPaginatorLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CE22038D0BE0012BF84 /* RESTPaginatorLoader.swift */; };
+		B7C81CE62038D5170012BF84 /* RESTPaginatorLoaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CE52038D5170012BF84 /* RESTPaginatorLoaderError.swift */; };
 		B7C9195A2034B24E00111DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919592034B24E00111DBE /* AppDelegate.swift */; };
 		B7C9195C2034B24E00111DBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C9195B2034B24E00111DBE /* ViewController.swift */; };
 		B7C9195F2034B24E00111DBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C9195D2034B24E00111DBE /* Main.storyboard */; };
@@ -77,6 +80,9 @@
 		B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorServiceConfiguration.swift; sourceTree = "<group>"; };
 		B71DB59220384F11003608AC /* RESTPaginatorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTPaginatorError.swift; sourceTree = "<group>"; };
 		B71DB59420384F57003608AC /* RESTPaginatorItemLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorItemLoadable.swift; sourceTree = "<group>"; };
+		B7C81CE02038D09A0012BF84 /* RESTPaginatorLoaderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoaderable.swift; sourceTree = "<group>"; };
+		B7C81CE22038D0BE0012BF84 /* RESTPaginatorLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoader.swift; sourceTree = "<group>"; };
+		B7C81CE52038D5170012BF84 /* RESTPaginatorLoaderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoaderError.swift; sourceTree = "<group>"; };
 		B7C81CE82038DCE00012BF84 /* todo.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = todo.strings; sourceTree = "<group>"; };
 		B7C919562034B24E00111DBE /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C919592034B24E00111DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -181,6 +187,8 @@
 				B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */,
 				B7154B832038523200DACF64 /* RESTPaginatorResponse.swift */,
 				B7154B892038603500DACF64 /* RESTPaginatorNetworkRequest.swift */,
+				B7C81CE22038D0BE0012BF84 /* RESTPaginatorLoader.swift */,
+				B7C81CE52038D5170012BF84 /* RESTPaginatorLoaderError.swift */,
 			);
 			path = Paginator;
 			sourceTree = "<group>";
@@ -193,6 +201,7 @@
 				B71DB58820377074003608AC /* RESTPaginatorServicing.swift */,
 				B71DB59420384F57003608AC /* RESTPaginatorItemLoadable.swift */,
 				B7154B9C2038919E00DACF64 /* RESTPaginatorNetworkRequestable.swift */,
+				B7C81CE02038D09A0012BF84 /* RESTPaginatorLoaderable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -541,10 +550,12 @@
 				B7C919982034BEFF00111DBE /* NetworkProviding.swift in Sources */,
 				B71DB58920377074003608AC /* RESTPaginatorServicing.swift in Sources */,
 				B7154B912038691900DACF64 /* JSONDecoder+Decoderable.swift in Sources */,
+				B7C81CE12038D09A0012BF84 /* RESTPaginatorLoaderable.swift in Sources */,
 				B7C9195C2034B24E00111DBE /* ViewController.swift in Sources */,
 				B7C919962034BE3A00111DBE /* NetworkServiceError.swift in Sources */,
 				B7C9198E2034BC9B00111DBE /* NetworkRequesting.swift in Sources */,
 				B71DB58B203770EF003608AC /* RESTPaginatorService.swift in Sources */,
+				B7C81CE62038D5170012BF84 /* RESTPaginatorLoaderError.swift in Sources */,
 				B7C919932034BD0C00111DBE /* Results.swift in Sources */,
 				B7C919AA2034E3AD00111DBE /* Result+Equatable.swift in Sources */,
 				B7C919A22034C1A500111DBE /* NetworkOperationResumable.swift in Sources */,
@@ -555,6 +566,7 @@
 				B7154B872038536200DACF64 /* RESTPaginatorResponsable.swift in Sources */,
 				B7154B942038726800DACF64 /* RESTPaginatorResponse+Decodable.swift in Sources */,
 				B71DB59520384F57003608AC /* RESTPaginatorItemLoadable.swift in Sources */,
+				B7C81CE32038D0BE0012BF84 /* RESTPaginatorLoader.swift in Sources */,
 				B71DB59320384F12003608AC /* RESTPaginatorError.swift in Sources */,
 				B7154B8F203868CE00DACF64 /* XMLDecoder.swift in Sources */,
 				B7154B8D203868AF00DACF64 /* Decoderable.swift in Sources */,
