@@ -77,6 +77,7 @@
 		B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorServiceConfiguration.swift; sourceTree = "<group>"; };
 		B71DB59220384F11003608AC /* RESTPaginatorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTPaginatorError.swift; sourceTree = "<group>"; };
 		B71DB59420384F57003608AC /* RESTPaginatorItemLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorItemLoadable.swift; sourceTree = "<group>"; };
+		B7C81CE82038DCE00012BF84 /* todo.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = todo.strings; sourceTree = "<group>"; };
 		B7C919562034B24E00111DBE /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C919592034B24E00111DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7C9195B2034B24E00111DBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -196,12 +197,21 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		B7C81CE72038DCCD0012BF84 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B7C81CE82038DCE00012BF84 /* todo.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B7C9194D2034B24E00111DBE = {
 			isa = PBXGroup;
 			children = (
 				B7C919582034B24E00111DBE /* MovieDB */,
 				B7C9196D2034B24E00111DBE /* MovieDBTests */,
 				B7C919782034B24E00111DBE /* MovieDBUITests */,
+				B7C81CE72038DCCD0012BF84 /* Resources */,
 				B7C919572034B24E00111DBE /* Products */,
 				8CF0C73C85DC64069D0DA641 /* Pods */,
 				38B87DA9F04F1787530A74FE /* Frameworks */,
