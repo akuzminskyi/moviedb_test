@@ -8,10 +8,11 @@
 
 import Foundation
 
-protocol RESTPaginatorResponsable {
-    associatedtype ResultType
+protocol RESTPaginatorResponsable: Decodable {
+    associatedtype ResultItemType: Decodable
+
     var page: UInt { get }
     var numberOfResults: UInt { get }
     var numberOfPages: UInt { get }
-    var results: [ResultType] { get }
+    var results: [ResultItemType] { get }
 }

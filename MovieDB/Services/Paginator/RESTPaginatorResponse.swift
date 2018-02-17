@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct RESTPaginatorResponse<T>: RESTPaginatorResponsable {
-    typealias ResultType = T
-    
+struct RESTPaginatorResponse<T: Decodable>: RESTPaginatorResponsable {
+    typealias ResultItemType = T
+
     var page: UInt
     var numberOfResults: UInt
     var numberOfPages: UInt
-    var results: [ResultType]
+    var results: [ResultItemType]
 }
