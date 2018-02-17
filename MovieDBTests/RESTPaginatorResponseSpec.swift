@@ -6,8 +6,6 @@
 //  Copyright © 2018 A.Kuzminskyi. All rights reserved.
 //
 
-import Foundation
-
 import Quick
 import Nimble
 @testable import MovieDB
