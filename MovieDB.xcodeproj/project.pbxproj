@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		5A0DF9DAC6F3B9B4254FAFB7 /* Pods_MovieDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3D07F6AC7685259E955E4E7 /* Pods_MovieDBTests.framework */; };
+		B71DB58920377074003608AC /* RESTPaginatorServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB58820377074003608AC /* RESTPaginatorServicing.swift */; };
+		B71DB58B203770EF003608AC /* RESTPaginatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB58A203770EF003608AC /* RESTPaginatorService.swift */; };
+		B71DB58D203772B0003608AC /* RESTPaginatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB58C203772B0003608AC /* RESTPaginatorDelegate.swift */; };
+		B71DB58F203776A3003608AC /* RESTPaginatorServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */; };
+		B71DB59320384F12003608AC /* RESTPaginatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB59220384F11003608AC /* RESTPaginatorError.swift */; };
 		B7C9195A2034B24E00111DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919592034B24E00111DBE /* AppDelegate.swift */; };
 		B7C9195C2034B24E00111DBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C9195B2034B24E00111DBE /* ViewController.swift */; };
 		B7C9195F2034B24E00111DBE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B7C9195D2034B24E00111DBE /* Main.storyboard */; };
@@ -43,6 +48,11 @@
 		8C9C6ABF9EA5DE0CA5548F13 /* Pods-MovieDB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDB.release.xcconfig"; path = "Pods/Target Support Files/Pods-MovieDB/Pods-MovieDB.release.xcconfig"; sourceTree = "<group>"; };
 		9C41A5E334476814FABAF535 /* Pods-MovieDB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieDB/Pods-MovieDB.debug.xcconfig"; sourceTree = "<group>"; };
 		9F3B810D618CAF362F0F2701 /* Pods-MovieDBTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MovieDBTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MovieDBTests/Pods-MovieDBTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B71DB58820377074003608AC /* RESTPaginatorServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorServicing.swift; sourceTree = "<group>"; };
+		B71DB58A203770EF003608AC /* RESTPaginatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorService.swift; sourceTree = "<group>"; };
+		B71DB58C203772B0003608AC /* RESTPaginatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorDelegate.swift; sourceTree = "<group>"; };
+		B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorServiceConfiguration.swift; sourceTree = "<group>"; };
+		B71DB59220384F11003608AC /* RESTPaginatorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTPaginatorError.swift; sourceTree = "<group>"; };
 		B7C919562034B24E00111DBE /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C919592034B24E00111DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B7C9195B2034B24E00111DBE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -110,6 +120,34 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		B7154B882038541800DACF64 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B71DB58C203772B0003608AC /* RESTPaginatorDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		B71DB58620377009003608AC /* Paginator */ = {
+			isa = PBXGroup;
+			children = (
+				B71DB5872037704A003608AC /* Protocols */,
+				B71DB59220384F11003608AC /* RESTPaginatorError.swift */,
+				B71DB58A203770EF003608AC /* RESTPaginatorService.swift */,
+				B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */,
+			);
+			path = Paginator;
+			sourceTree = "<group>";
+		};
+		B71DB5872037704A003608AC /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B7154B882038541800DACF64 /* Delegates */,
+				B71DB58820377074003608AC /* RESTPaginatorServicing.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		B7C9194D2034B24E00111DBE = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +207,7 @@
 		B7C919872034B8D300111DBE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B71DB58620377009003608AC /* Paginator */,
 				B7C919882034B8DD00111DBE /* Networking */,
 			);
 			path = Services;
@@ -437,14 +476,19 @@
 				B7C919A42034C25600111DBE /* NetworkOperationable.swift in Sources */,
 				B7C9199A2034BFAD00111DBE /* NetworkOperationCancalable.swift in Sources */,
 				B7C919982034BEFF00111DBE /* NetworkProviding.swift in Sources */,
+				B71DB58920377074003608AC /* RESTPaginatorServicing.swift in Sources */,
 				B7C9195C2034B24E00111DBE /* ViewController.swift in Sources */,
 				B7C919962034BE3A00111DBE /* NetworkServiceError.swift in Sources */,
 				B7C9198E2034BC9B00111DBE /* NetworkRequesting.swift in Sources */,
+				B71DB58B203770EF003608AC /* RESTPaginatorService.swift in Sources */,
 				B7C919932034BD0C00111DBE /* Results.swift in Sources */,
 				B7C919AA2034E3AD00111DBE /* Result+Equatable.swift in Sources */,
 				B7C919A22034C1A500111DBE /* NetworkOperationResumable.swift in Sources */,
 				B7C9198C2034BC6900111DBE /* NetworkServicing.swift in Sources */,
+				B71DB58D203772B0003608AC /* RESTPaginatorDelegate.swift in Sources */,
 				B7C9198A2034BC4F00111DBE /* NetworkService.swift in Sources */,
+				B71DB59320384F12003608AC /* RESTPaginatorError.swift in Sources */,
+				B71DB58F203776A3003608AC /* RESTPaginatorServiceConfiguration.swift in Sources */,
 				B7C9195A2034B24E00111DBE /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
