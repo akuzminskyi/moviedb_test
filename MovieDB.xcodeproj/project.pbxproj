@@ -25,9 +25,11 @@
 		B71DB58F203776A3003608AC /* RESTPaginatorServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */; };
 		B71DB59320384F12003608AC /* RESTPaginatorError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB59220384F11003608AC /* RESTPaginatorError.swift */; };
 		B71DB59520384F57003608AC /* RESTPaginatorItemLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B71DB59420384F57003608AC /* RESTPaginatorItemLoadable.swift */; };
+		B7C24A732038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */; };
 		B7C81CE12038D09A0012BF84 /* RESTPaginatorLoaderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CE02038D09A0012BF84 /* RESTPaginatorLoaderable.swift */; };
 		B7C81CE32038D0BE0012BF84 /* RESTPaginatorLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CE22038D0BE0012BF84 /* RESTPaginatorLoader.swift */; };
 		B7C81CE62038D5170012BF84 /* RESTPaginatorLoaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CE52038D5170012BF84 /* RESTPaginatorLoaderError.swift */; };
+		B7C81CEB2038E33F0012BF84 /* RESTPaginatorLoader+RESTPaginatorLoaderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CEA2038E33F0012BF84 /* RESTPaginatorLoader+RESTPaginatorLoaderable.swift */; };
 		B7C81CED2038E4960012BF84 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B7C81CEC2038E4950012BF84 /* README.md */; };
 		B7C9195A2034B24E00111DBE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C919592034B24E00111DBE /* AppDelegate.swift */; };
 		B7C9195C2034B24E00111DBE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C9195B2034B24E00111DBE /* ViewController.swift */; };
@@ -84,6 +86,7 @@
 		B7C81CE02038D09A0012BF84 /* RESTPaginatorLoaderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoaderable.swift; sourceTree = "<group>"; };
 		B7C81CE22038D0BE0012BF84 /* RESTPaginatorLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoader.swift; sourceTree = "<group>"; };
 		B7C81CE52038D5170012BF84 /* RESTPaginatorLoaderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoaderError.swift; sourceTree = "<group>"; };
+		B7C81CEA2038E33F0012BF84 /* RESTPaginatorLoader+RESTPaginatorLoaderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RESTPaginatorLoader+RESTPaginatorLoaderable.swift"; sourceTree = "<group>"; };
 		B7C81CEC2038E4950012BF84 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B7C919562034B24E00111DBE /* MovieDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C919592034B24E00111DBE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				B7154B932038726800DACF64 /* RESTPaginatorResponse+Decodable.swift */,
+				B7C81CEA2038E33F0012BF84 /* RESTPaginatorLoader+RESTPaginatorLoaderable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -568,6 +572,7 @@
 				B7154B872038536200DACF64 /* RESTPaginatorResponsable.swift in Sources */,
 				B7154B942038726800DACF64 /* RESTPaginatorResponse+Decodable.swift in Sources */,
 				B71DB59520384F57003608AC /* RESTPaginatorItemLoadable.swift in Sources */,
+				B7C81CEB2038E33F0012BF84 /* RESTPaginatorLoader+RESTPaginatorLoaderable.swift in Sources */,
 				B7C81CE32038D0BE0012BF84 /* RESTPaginatorLoader.swift in Sources */,
 				B71DB59320384F12003608AC /* RESTPaginatorError.swift in Sources */,
 				B7154B8F203868CE00DACF64 /* XMLDecoder.swift in Sources */,

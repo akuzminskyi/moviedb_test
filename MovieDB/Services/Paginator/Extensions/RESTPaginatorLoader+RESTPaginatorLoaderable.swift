@@ -7,3 +7,10 @@
 //
 
 import Foundation
+
+extension RESTPaginatorLoader: RESTPaginatorLoaderable {
+    func load<T: Decodable> (request: RESTPaginatorNetworkRequestable,
+                             completionBlock: @escaping (Result<T>) -> ()) {
+        load(force: false, request: request, completionBlock: completionBlock)
+    }
+}
