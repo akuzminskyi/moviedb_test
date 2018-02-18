@@ -8,30 +8,70 @@
 
 import Foundation
 
-final class RESTPaginatorService {
-    var baseURL: URL
-    //TODO: - move magic number to ...
+final class RESTPaginatorService<ItemType: Decodable> {
+    //TODO: - move magic numbers to ...
     var numberOfPages: UInt = 1
-    var numberOfItems: UInt = 0
+    var numberOfItems: UInt = 0 {
+        didSet {
+            guard oldValue != numberOfItems else {
+                return
+            }
+            self.delegate?.paginator(paginator: self, numberOfItemsDidChange: numberOfItems)
+        }
+    }
+
     let batchSize: UInt
+
     weak var delegate: RESTPaginatorDelegate?
-    private let networkService: NetworkServicing
+    weak var errorDelegate: RESTPaginatorErrorDelegate?
+
+    private let pageParametrName: String
+    private let loader: RESTPaginatorLoaderable
 
     init(configuration: RESTPaginatorServiceConfiguration) {
-        baseURL = configuration.baseURL
         batchSize = configuration.batchSize
-        networkService = configuration.networkService
-        try? load(page: configuration.inializationPage, force: true)
+        pageParametrName = configuration.pageParametrName
+        loader = configuration.loader
+        try? load(page: configuration.inializationPage, force: true) // ignore case when the initial page is out of range,
+    }
+
+    //MARK: - private methods
+
+    private func generateRequestFor(page: UInt) -> RESTPaginatorNetworkRequestable? {
+        return RESTPaginatorNetworkRequest(baseURL: loader.baseURL,
+                                           page: page,
+                                           pageParameterName: pageParametrName)
     }
 
     private func load(page: UInt, force: Bool) throws {
         guard force || page <= numberOfPages else {
-            throw RESTPaginatorError.OutOfRange.page
+            throw RESTPaginatorError.pageOutOfRange
+        }
+        guard let request = generateRequestFor(page: page) else {
+            throw RESTPaginatorError.creatingRequest
+        }
+        loader.load(request: request) { [weak self] (responseResult: Result<RESTPaginatorResponse<ItemType>>) in
+            guard let `self` = self else {
+                return
+            }
+
+            switch responseResult {
+            case .failure(let error):
+                self.errorDelegate?.paginator(paginator: self, caught: error)
+            case .success(let response):
+                self.numberOfPages = response.numberOfPages
+                self.numberOfItems = response.numberOfResults
+                self.delegate?.paginator(paginator: self, loaded: response.results, at: page)
+            }
         }
     }
 }
 
 extension RESTPaginatorService: RESTPaginatorServicing {
+    var baseURL: URL {
+        return loader.baseURL
+    }
+
     func load(page: UInt) throws {
         try load(page: page, force: false)
     }
@@ -44,7 +84,7 @@ extension RESTPaginatorService: RESTPaginatorItemLoadable {
         }
 
         guard index < numberOfItems else {
-            throw RESTPaginatorError.OutOfRange.item
+            throw RESTPaginatorError.itemOutOfRange
         }
         let page = pageForItem(at: index)
         try load(page: page, force: force)

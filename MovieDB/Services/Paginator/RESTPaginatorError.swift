@@ -9,8 +9,8 @@
 import Foundation
 
 enum RESTPaginatorError: Error {
-    enum OutOfRange: Error {
-        case page
-        case item
-    }
+    case pageOutOfRange
+    case itemOutOfRange
+    case unexpected
+    case creatingRequest
 }
