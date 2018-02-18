@@ -57,6 +57,18 @@ final class RESTPaginatorLoader {
 
     //MARK: - interal methods
 
+    /// The method load the request and returns result in `completionBlock`.
+    /// The method track the requests that's inprogress and return `Result.failure(RESTPaginatorLoaderError.requestAlreadyInProgress)`
+    /// if that same request going to load while executing request.
+    ///
+    /// - Parameters:
+    ///   - force: if `true` the loader excecute the request even if the same request is executing,
+    ///            if `false` the loader verify the request in progress and
+    ///               if exist the method complete with `Result.failure(RESTPaginatorLoaderError.requestAlreadyInProgress)`
+    /// Result.failure(RESTPaginatorLoaderError.requestAlreadyInProgress
+    ///   - request: a reqeust that should be executed
+    ///   - completionBlock: returns the result of executing request,
+    ///                      if loading complete with error it returns `Result.error<T>` owerwise `Result.success<T>`
     func load<T: Decodable>(force: Bool,
                             request: RESTPaginatorNetworkRequestable,
                             completionBlock: @escaping (Result<T>) -> ()) {

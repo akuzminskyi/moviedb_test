@@ -11,32 +11,15 @@ import Nimble
 @testable import MovieDB
 
 final class NetworkServiceSpec: QuickSpec {
-    private final class MockNetworkProvider: NetworkProviding {
-        struct MockNetworkOperation: NetworkOperationable {
-            func cancel() {
-            }
-
-            func resume() {
-            }
-        }
-
-        var resultData: Data?
-        var resultError: Error?
-
-        func dataTasks(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkOperationable {
-            completionHandler(resultData, nil, resultError)
-            return MockNetworkOperation()
-        }
-    }
-
     override func spec() {
         describe("A NetworkService") {
             var networkService: NetworkServicing!
-            var networkProvider: MockNetworkProvider!
+            var networkProvider: MockedNetworkProvider!
             beforeEach {
-                networkProvider = MockNetworkProvider()
+                networkProvider = MockedNetworkProvider()
                 networkService = NetworkService(networkProvider: networkProvider)
             }
+            
             @discardableResult func executeMockedRequest(completionBlock: @escaping (Result<Data>, NetworkRequesting) -> ()) -> NetworkOperationCancalable {
                 return networkService.execute(request: URL(string: "http://example.com")!, completionBlock: completionBlock)
             }

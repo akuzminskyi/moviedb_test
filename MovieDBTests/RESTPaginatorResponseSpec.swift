@@ -13,8 +13,8 @@ import Nimble
 final class RESTPaginatorResponseSpec: QuickSpec {
     enum JSONSamples {
         enum Valide: String {
-            case structureWithArrayOfStringResults = "{\"page\":2,\"total_results\":105,\"total_pages\":6,\"results\":[\"val1\",\"val2\"]}"
-            case structureWithArrayOfIntResults = "{\"page\":2,\"total_results\":105,\"total_pages\":6,\"results\":[1,2,3]}"
+            case structureWithStringResults = "{\"page\":2,\"total_results\":105,\"total_pages\":6,\"results\":[\"val1\",\"val2\"]}"
+            case structureWithIntResults = "{\"page\":2,\"total_results\":105,\"total_pages\":6,\"results\":[1,2,3]}"
         }
         enum Invalide: String {
             case structure = "{\"pagination\":{\"page\":2,\"total_results\":105,\"total_pages\":6},\"results\":[\"val1\",\"val2\"]}"
@@ -39,7 +39,7 @@ final class RESTPaginatorResponseSpec: QuickSpec {
                 }
                 context("is Decodable when") {
                     beforeEach {
-                        response = try? decode(string: JSONSamples.Valide.structureWithArrayOfStringResults.rawValue)
+                        response = try? decode(string: JSONSamples.Valide.structureWithStringResults.rawValue)
                     }
 
                     it("structure is valide") {
@@ -78,7 +78,7 @@ final class RESTPaginatorResponseSpec: QuickSpec {
                 }
                 context("is Decodable when") {
                     beforeEach {
-                        response = try? decode(string: JSONSamples.Valide.structureWithArrayOfIntResults.rawValue)
+                        response = try? decode(string: JSONSamples.Valide.structureWithIntResults.rawValue)
                     }
                     it("structure is valide") {
                         expect(response).toNot(beNil())
