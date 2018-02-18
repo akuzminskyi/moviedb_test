@@ -12,11 +12,15 @@ protocol MovieViewModeling: Decodable {
     var overview: String? { get }
     var posterRelativePath: String? { get }
     var releaseDateString: String? { get }
+    var thumbnailURL: URL? { get }
     var name: String? { get }
 }
 
 extension MovieViewModeling {
-    func posterURLWith(domain: URL, for size: PosterSize) -> URL? {
+    var thumbnailURL: URL? {
+    }
+
+    func posterURLWith(domain: URL, withSize size: PosterSize) -> URL? {
         guard let relativePath = posterRelativePath, var component = URLComponents(url: domain, resolvingAgainstBaseURL: true) else {
             return nil
         }

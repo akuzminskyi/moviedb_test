@@ -20,7 +20,11 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(for: indexPath, cellType: MovieCell.self)
         let itemViewModel: ItemModelState<MovieViewModel> = viewModel.itemAt(indexPath: indexPath)
-        cell.configCell(with: itemViewModel)
+        cell.viewModel = itemViewModel
+
+        if case ItemModelState.loaded(let model) = cell.viewModel, let url = model.thumbnailURL {
+            cell.posterImageView.image = viewModel.imageDownloadService.cachedImage(from: url)
+        }
         return cell
     }
 }

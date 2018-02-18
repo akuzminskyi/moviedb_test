@@ -52,6 +52,9 @@
 		B79221FF203A22940054681E /* RESTPaginatorService+RESTPaginatorItemLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B79221FE203A22940054681E /* RESTPaginatorService+RESTPaginatorItemLoadable.swift */; };
 		B7922201203A2BA00054681E /* SearchViewModelingDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922200203A2BA00054681E /* SearchViewModelingDataSource.swift */; };
 		B7922203203A2F420054681E /* SearchViewController+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922202203A2F420054681E /* SearchViewController+UISearchBarDelegate.swift */; };
+		B7922206203A30AF0054681E /* ImageDownloadServicing.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922205203A30AF0054681E /* ImageDownloadServicing.swift */; };
+		B7922208203A30CF0054681E /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922207203A30CF0054681E /* ImageDownloadService.swift */; };
+		B792220A203A36BF0054681E /* SearchViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922209203A36BF0054681E /* SearchViewController+UITableViewDelegate.swift */; };
 		B7C24A732038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */; };
 		B7C24A762039763C00B52C6D /* MockedNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A752039763C00B52C6D /* MockedNetworkProvider.swift */; };
 		B7C24A782039886E00B52C6D /* RESTPaginatorErrorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A772039886E00B52C6D /* RESTPaginatorErrorDelegate.swift */; };
@@ -139,6 +142,9 @@
 		B79221FE203A22940054681E /* RESTPaginatorService+RESTPaginatorItemLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RESTPaginatorService+RESTPaginatorItemLoadable.swift"; sourceTree = "<group>"; };
 		B7922200203A2BA00054681E /* SearchViewModelingDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModelingDataSource.swift; sourceTree = "<group>"; };
 		B7922202203A2F420054681E /* SearchViewController+UISearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
+		B7922205203A30AF0054681E /* ImageDownloadServicing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadServicing.swift; sourceTree = "<group>"; };
+		B7922207203A30CF0054681E /* ImageDownloadService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
+		B7922209203A36BF0054681E /* SearchViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RESTPaginatorNetworkRequestable.swift"; sourceTree = "<group>"; };
 		B7C24A752039763C00B52C6D /* MockedNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkProvider.swift; sourceTree = "<group>"; };
 		B7C24A772039886E00B52C6D /* RESTPaginatorErrorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorErrorDelegate.swift; sourceTree = "<group>"; };
@@ -268,15 +274,16 @@
 			isa = PBXGroup;
 			children = (
 				B70AD6A22039A04900E99E1B /* MovieCell+NibReusable .swift */,
+				B70AD6A82039A4CC00E99E1B /* MovieViewModel+MovieViewModeling.swift */,
 				B70AD6A42039A07300E99E1B /* SearchViewController+UITableViewDataSource.swift */,
 				B70AD6A62039A09000E99E1B /* SearchViewController+UITableViewDataSourcePrefetching.swift */,
-				B70AD6A82039A4CC00E99E1B /* MovieViewModel+MovieViewModeling.swift */,
+				B7922209203A36BF0054681E /* SearchViewController+UITableViewDelegate.swift */,
+				B7922202203A2F420054681E /* SearchViewController+UISearchBarDelegate.swift */,
 				B70AD6AC2039ACEC00E99E1B /* SearchViewModel+Searchable.swift */,
 				B79221F6203A1B3F0054681E /* SearchViewModel+RESTPaginatorErrorDelegate .swift */,
 				B79221F8203A1B9C0054681E /* SearchViewModel+RESTPaginatorDelegate.swift */,
 				B79221FA203A1BCB0054681E /* SearchViewModel+SearchViewModeling.swift */,
 				B79221FC203A1D400054681E /* SearchViewModel+SearchViewModelingDataSource.swift */,
-				B7922202203A2F420054681E /* SearchViewController+UISearchBarDelegate.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -337,6 +344,15 @@
 				B7C81CE02038D09A0012BF84 /* RESTPaginatorLoaderable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		B7922204203A30980054681E /* ImageDownload */ = {
+			isa = PBXGroup;
+			children = (
+				B7922205203A30AF0054681E /* ImageDownloadServicing.swift */,
+				B7922207203A30CF0054681E /* ImageDownloadService.swift */,
+			);
+			path = ImageDownload;
 			sourceTree = "<group>";
 		};
 		B7C24A742039761800B52C6D /* Helpers */ = {
@@ -420,6 +436,7 @@
 		B7C919872034B8D300111DBE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B7922204203A30980054681E /* ImageDownload */,
 				B7154B8B2038687B00DACF64 /* Decoderable */,
 				B71DB58620377009003608AC /* Paginator */,
 				B7C919882034B8DD00111DBE /* Networking */,
@@ -706,6 +723,7 @@
 				B7154B8A2038603500DACF64 /* RESTPaginatorNetworkRequest.swift in Sources */,
 				B70AD69620398EE600E99E1B /* SearchViewModeling.swift in Sources */,
 				B79221F7203A1B3F0054681E /* SearchViewModel+RESTPaginatorErrorDelegate .swift in Sources */,
+				B7922206203A30AF0054681E /* ImageDownloadServicing.swift in Sources */,
 				B7C919982034BEFF00111DBE /* NetworkProviding.swift in Sources */,
 				B70AD69420398EB800E99E1B /* SearchViewModel.swift in Sources */,
 				B71DB58920377074003608AC /* RESTPaginatorServicing.swift in Sources */,
@@ -720,6 +738,7 @@
 				B7C9195C2034B24E00111DBE /* ViewController.swift in Sources */,
 				B7C919962034BE3A00111DBE /* NetworkServiceError.swift in Sources */,
 				B7C9198E2034BC9B00111DBE /* NetworkRequesting.swift in Sources */,
+				B792220A203A36BF0054681E /* SearchViewController+UITableViewDelegate.swift in Sources */,
 				B70AD69B2039966E00E99E1B /* MovieCell.swift in Sources */,
 				B71DB58B203770EF003608AC /* RESTPaginatorService.swift in Sources */,
 				B7C81CE62038D5170012BF84 /* RESTPaginatorLoaderError.swift in Sources */,
@@ -734,6 +753,7 @@
 				B71DB58D203772B0003608AC /* RESTPaginatorDelegate.swift in Sources */,
 				B7C9198A2034BC4F00111DBE /* NetworkService.swift in Sources */,
 				B7154B872038536200DACF64 /* RESTPaginatorResponsable.swift in Sources */,
+				B7922208203A30CF0054681E /* ImageDownloadService.swift in Sources */,
 				B7154B942038726800DACF64 /* RESTPaginatorResponse+Decodable.swift in Sources */,
 				B70AD6A32039A04900E99E1B /* MovieCell+NibReusable .swift in Sources */,
 				B71DB59520384F57003608AC /* RESTPaginatorItemLoadable.swift in Sources */,

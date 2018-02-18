@@ -9,16 +9,19 @@
 import Foundation
 
 final class SearchViewModel<T> {
+    let imageDownloadService: ImageDownloadServicing
     typealias Item = T
 
     var itemsDidChange: (() -> ())?
     var itemsDidChangeAt: (([IndexPath]) -> ())?
-    
+
     var items = [ItemModelState<Item>]()
     let paginator: RESTPaginatorServicing
 
-    init(paginator: RESTPaginatorServicing) {
+    init(paginator: RESTPaginatorServicing, imageDownloadService: ImageDownloadServicing) {
         self.paginator = paginator
+        self.imageDownloadService = imageDownloadService
+
         self.paginator.delegate = self
     }
 }
