@@ -22,6 +22,8 @@
 		B70AD6A52039A07300E99E1B /* SearchViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AD6A42039A07300E99E1B /* SearchViewController+UITableViewDataSource.swift */; };
 		B70AD6A72039A09000E99E1B /* SearchViewController+UITableViewDataSourcePrefetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AD6A62039A09000E99E1B /* SearchViewController+UITableViewDataSourcePrefetching.swift */; };
 		B70AD6A92039A4CC00E99E1B /* MovieViewModel+MovieViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AD6A82039A4CC00E99E1B /* MovieViewModel+MovieViewModeling.swift */; };
+		B70AD6AB2039AC7900E99E1B /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AD6AA2039AC7900E99E1B /* Searchable.swift */; };
+		B70AD6AD2039ACEC00E99E1B /* SearchViewModel+Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AD6AC2039ACEC00E99E1B /* SearchViewModel+Searchable.swift */; };
 		B7154B842038523200DACF64 /* RESTPaginatorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7154B832038523200DACF64 /* RESTPaginatorResponse.swift */; };
 		B7154B872038536200DACF64 /* RESTPaginatorResponsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7154B862038536200DACF64 /* RESTPaginatorResponsable.swift */; };
 		B7154B8A2038603500DACF64 /* RESTPaginatorNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7154B892038603500DACF64 /* RESTPaginatorNetworkRequest.swift */; };
@@ -98,6 +100,8 @@
 		B70AD6A42039A07300E99E1B /* SearchViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		B70AD6A62039A09000E99E1B /* SearchViewController+UITableViewDataSourcePrefetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+UITableViewDataSourcePrefetching.swift"; sourceTree = "<group>"; };
 		B70AD6A82039A4CC00E99E1B /* MovieViewModel+MovieViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieViewModel+MovieViewModeling.swift"; sourceTree = "<group>"; };
+		B70AD6AA2039AC7900E99E1B /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
+		B70AD6AC2039ACEC00E99E1B /* SearchViewModel+Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewModel+Searchable.swift"; sourceTree = "<group>"; };
 		B7154B832038523200DACF64 /* RESTPaginatorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorResponse.swift; sourceTree = "<group>"; };
 		B7154B862038536200DACF64 /* RESTPaginatorResponsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorResponsable.swift; sourceTree = "<group>"; };
 		B7154B892038603500DACF64 /* RESTPaginatorNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorNetworkRequest.swift; sourceTree = "<group>"; };
@@ -247,6 +251,7 @@
 				B70AD6A42039A07300E99E1B /* SearchViewController+UITableViewDataSource.swift */,
 				B70AD6A62039A09000E99E1B /* SearchViewController+UITableViewDataSourcePrefetching.swift */,
 				B70AD6A82039A4CC00E99E1B /* MovieViewModel+MovieViewModeling.swift */,
+				B70AD6AC2039ACEC00E99E1B /* SearchViewModel+Searchable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -420,6 +425,7 @@
 		B7C919942034BD1500111DBE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				B70AD6AA2039AC7900E99E1B /* Searchable.swift */,
 				B7C919922034BD0C00111DBE /* Results.swift */,
 			);
 			path = Helpers;
@@ -667,6 +673,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B70AD6AB2039AC7900E99E1B /* Searchable.swift in Sources */,
 				B7C919A42034C25600111DBE /* NetworkOperationable.swift in Sources */,
 				B7C9199A2034BFAD00111DBE /* NetworkOperationCancalable.swift in Sources */,
 				B7154B8A2038603500DACF64 /* RESTPaginatorNetworkRequest.swift in Sources */,
@@ -708,6 +715,7 @@
 				B7154B8D203868AF00DACF64 /* Decoderable.swift in Sources */,
 				B70AD6A72039A09000E99E1B /* SearchViewController+UITableViewDataSourcePrefetching.swift in Sources */,
 				B70AD69220398E8800E99E1B /* SearchViewController.swift in Sources */,
+				B70AD6AD2039ACEC00E99E1B /* SearchViewModel+Searchable.swift in Sources */,
 				B7154B9D2038919E00DACF64 /* RESTPaginatorNetworkRequestable.swift in Sources */,
 				B70AD68720398BB600E99E1B /* URLSession+NetworkProviding.swift in Sources */,
 				B71DB58F203776A3003608AC /* RESTPaginatorServiceConfiguration.swift in Sources */,
