@@ -8,6 +8,17 @@
 
 import Foundation
 
-struct SearchViewModel {
+final class SearchViewModel<T> {
+    typealias Item = T
 
+    var itemsDidChange: (() -> ())?
+    var itemsDidChangeAt: (([IndexPath]) -> ())?
+    
+    var items = [ItemModelState<Item>]()
+    let paginator: RESTPaginatorServicing
+
+    init(paginator: RESTPaginatorServicing) {
+        self.paginator = paginator
+        self.paginator.delegate = self
+    }
 }

@@ -8,17 +8,14 @@
 
 import Foundation
 
-protocol SearchViewModeling {
-    func search(term: String)
-    func loadItem(at indexPaths: [IndexPath])
-    var numberOfSection: Int { get }
-
-    func itemAt(index: IndexPath) -> MovieViewModeling
-    func numberOfItems(in seaction: Int) -> Int
+protocol SearchViewModeling: Searchable, SearchViewModelingDataSource {
+    var itemsDidChange: (() -> ())? { set get }
+    var itemsDidChangeAt: (([IndexPath]) -> ())? { set get }
+    func loadItems(at indexPaths: [IndexPath])
 }
 
 extension SearchViewModeling {
     func loadItem(at indexPath: IndexPath) {
-        loadItem(at: [indexPath])
+        loadItems(at: [indexPath])
     }
 }

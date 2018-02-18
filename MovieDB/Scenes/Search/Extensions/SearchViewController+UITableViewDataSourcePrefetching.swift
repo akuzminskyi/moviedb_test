@@ -10,6 +10,6 @@ import UIKit
 
 extension SearchViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
-        viewModel.loadItem(at: indexPaths)
+        viewModel.loadItems(at: indexPaths)
     }
 }
