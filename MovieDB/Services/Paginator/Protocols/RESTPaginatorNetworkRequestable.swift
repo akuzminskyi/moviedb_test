@@ -10,6 +10,6 @@ import Foundation
 
 protocol RESTPaginatorNetworkRequestable: NetworkRequesting {
     var baseURL: URL { get }
-    var page: UInt { get }
+    var page: Int { get }
     var pageParameterName: String { get }
 }

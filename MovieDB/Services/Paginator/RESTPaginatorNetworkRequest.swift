@@ -10,12 +10,12 @@ import Foundation
 
 struct RESTPaginatorNetworkRequest {
     let baseURL: URL
-    let page: UInt
+    let page: Int
     let pageParameterName: String
 
     fileprivate let _url: URL
 
-    init?(baseURL: URL, page: UInt, pageParameterName: String) {
+    init?(baseURL: URL, page: Int, pageParameterName: String) {
         func add(queryItem: URLQueryItem, to baseUrl: URL) -> URL? {
             guard var urlComponent = URLComponents(url: baseURL, resolvingAgainstBaseURL: true) else {
                 return nil

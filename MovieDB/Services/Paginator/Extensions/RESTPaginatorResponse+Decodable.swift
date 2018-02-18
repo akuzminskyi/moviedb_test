@@ -19,9 +19,9 @@ extension RESTPaginatorResponse: Decodable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
-        page = try container.decode(UInt.self, forKey: .page)
-        numberOfResults = try container.decode(UInt.self, forKey: .numberOfResults)
-        numberOfPages = try container.decode(UInt.self, forKey: .numberOfPages)
+        page = try container.decode(Int.self, forKey: .page)
+        numberOfResults = try container.decode(Int.self, forKey: .numberOfResults)
+        numberOfPages = try container.decode(Int.self, forKey: .numberOfPages)
         results = try container.decode([ResultItemType].self, forKey: .results)
     }
 }

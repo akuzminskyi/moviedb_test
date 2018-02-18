@@ -11,8 +11,8 @@ import Foundation
 protocol RESTPaginatorResponsable: Decodable {
     associatedtype ResultItemType: Decodable
 
-    var page: UInt { get }
-    var numberOfResults: UInt { get }
-    var numberOfPages: UInt { get }
+    var page: Int { get }
+    var numberOfResults: Int { get }
+    var numberOfPages: Int { get }
     var results: [ResultItemType] { get }
 }

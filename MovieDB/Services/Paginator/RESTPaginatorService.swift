@@ -10,8 +10,8 @@ import Foundation
 
 final class RESTPaginatorService<ItemType: Decodable> {
     //TODO: - move magic numbers to ...
-    var numberOfPages: UInt = 1
-    var numberOfItems: UInt = 0 {
+    var numberOfPages: Int = 1
+    var numberOfItems: Int = 0 {
         didSet {
             guard oldValue != numberOfItems else {
                 return
@@ -20,7 +20,7 @@ final class RESTPaginatorService<ItemType: Decodable> {
         }
     }
 
-    let batchSize: UInt
+    let batchSize: Int
 
     weak var delegate: RESTPaginatorDelegate?
     weak var errorDelegate: RESTPaginatorErrorDelegate?
@@ -37,13 +37,13 @@ final class RESTPaginatorService<ItemType: Decodable> {
 
     //MARK: - private methods
 
-    private func generateRequestFor(page: UInt) -> RESTPaginatorNetworkRequestable? {
+    private func generateRequestFor(page: Int) -> RESTPaginatorNetworkRequestable? {
         return RESTPaginatorNetworkRequest(baseURL: loader.baseURL,
                                            page: page,
                                            pageParameterName: pageParametrName)
     }
 
-    private func load(page: UInt, force: Bool) throws {
+    private func load(page: Int, force: Bool) throws {
         guard force || page <= numberOfPages else {
             throw RESTPaginatorError.pageOutOfRange
         }
@@ -72,14 +72,14 @@ extension RESTPaginatorService: RESTPaginatorServicing {
         return loader.baseURL
     }
 
-    func load(page: UInt) throws {
+    func load(page: Int) throws {
         try load(page: page, force: false)
     }
 }
 
 extension RESTPaginatorService: RESTPaginatorItemLoadable {
-    private func load(itemAtIndex index: UInt, force: Bool) throws {
-        func pageForItem(at index: UInt) -> UInt {
+    private func load(itemAtIndex index: Int, force: Bool) throws {
+        func pageForItem(at index: Int) -> Int {
             return index / batchSize + index % batchSize == 0 ? 1 : 0
         }
 
@@ -90,7 +90,7 @@ extension RESTPaginatorService: RESTPaginatorItemLoadable {
         try load(page: page, force: force)
     }
 
-    func load(itemAtIndex index: UInt) throws {
+    func load(itemAtIndex index: Int) throws {
         try load(itemAtIndex: index, force: false)
     }
 }

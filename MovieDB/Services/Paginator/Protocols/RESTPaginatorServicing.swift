@@ -10,11 +10,11 @@ import Foundation
 
 protocol RESTPaginatorServicing {
     var baseURL: URL { get }
-    var numberOfPages: UInt { get }
-    var numberOfItems: UInt { get }
+    var numberOfPages: Int { get }
+    var numberOfItems: Int { get }
 
     var delegate: RESTPaginatorDelegate? { set get }
     var errorDelegate: RESTPaginatorErrorDelegate? { set get }
 
-    func load(page: UInt) throws
+    func load(page: Int) throws
 }

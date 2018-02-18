@@ -9,6 +9,6 @@
 import Foundation
 
 protocol RESTPaginatorDelegate: class {
-    func paginator<ItemType>(paginator: RESTPaginatorServicing, loaded items: [ItemType], at page: UInt)
-    func paginator(paginator: RESTPaginatorServicing, numberOfItemsDidChange numberOfItems: UInt)
+    func paginator<ItemType>(paginator: RESTPaginatorServicing, loaded items: [ItemType], at page: Int)
+    func paginator(paginator: RESTPaginatorServicing, numberOfItemsDidChange numberOfItems: Int)
 }

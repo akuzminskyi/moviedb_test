@@ -11,8 +11,8 @@ import Foundation
 struct RESTPaginatorResponse<T: Decodable>: RESTPaginatorResponsable {
     typealias ResultItemType = T
 
-    var page: UInt
-    var numberOfResults: UInt
-    var numberOfPages: UInt
+    var page: Int
+    var numberOfResults: Int
+    var numberOfPages: Int
     var results: [ResultItemType]
 }
