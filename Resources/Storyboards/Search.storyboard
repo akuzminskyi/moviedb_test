@@ -21,14 +21,18 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5h8-qE-S5E">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" id="KcD-xI-sAE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" showsSearchResultsButton="YES" id="KcD-xI-sAE">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits"/>
+                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="eMg-Zy-SBn" id="etO-ua-m8k"/>
+                                    </connections>
                                 </searchBar>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="eMg-Zy-SBn" id="6hf-9w-xIW"/>
+                                    <outlet property="delegate" destination="eMg-Zy-SBn" id="mYe-sg-eAu"/>
                                     <outlet property="prefetchDataSource" destination="eMg-Zy-SBn" id="bBe-pR-5gs"/>
                                 </connections>
                             </tableView>
