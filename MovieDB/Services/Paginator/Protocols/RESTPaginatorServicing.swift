@@ -14,5 +14,7 @@ protocol RESTPaginatorServicing {
     var numberOfItems: UInt { get }
 
     var delegate: RESTPaginatorDelegate? { set get }
+    var errorDelegate: RESTPaginatorErrorDelegate? { set get }
+
     func load(page: UInt) throws
 }
