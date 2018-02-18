@@ -83,6 +83,7 @@
 		B71DB58E203776A3003608AC /* RESTPaginatorServiceConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorServiceConfiguration.swift; sourceTree = "<group>"; };
 		B71DB59220384F11003608AC /* RESTPaginatorError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RESTPaginatorError.swift; sourceTree = "<group>"; };
 		B71DB59420384F57003608AC /* RESTPaginatorItemLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorItemLoadable.swift; sourceTree = "<group>"; };
+		B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RESTPaginatorNetworkRequestable.swift"; sourceTree = "<group>"; };
 		B7C81CE02038D09A0012BF84 /* RESTPaginatorLoaderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoaderable.swift; sourceTree = "<group>"; };
 		B7C81CE22038D0BE0012BF84 /* RESTPaginatorLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoader.swift; sourceTree = "<group>"; };
 		B7C81CE52038D5170012BF84 /* RESTPaginatorLoaderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoaderError.swift; sourceTree = "<group>"; };
@@ -303,6 +304,7 @@
 			children = (
 				B7C9199B2034C03300111DBE /* Networking */,
 				B7C919A92034E3AD00111DBE /* Result+Equatable.swift */,
+				B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -576,6 +578,7 @@
 				B7C81CE32038D0BE0012BF84 /* RESTPaginatorLoader.swift in Sources */,
 				B71DB59320384F12003608AC /* RESTPaginatorError.swift in Sources */,
 				B7154B8F203868CE00DACF64 /* XMLDecoder.swift in Sources */,
+				B7C24A732038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift in Sources */,
 				B7154B8D203868AF00DACF64 /* Decoderable.swift in Sources */,
 				B7154B9D2038919E00DACF64 /* RESTPaginatorNetworkRequestable.swift in Sources */,
 				B71DB58F203776A3003608AC /* RESTPaginatorServiceConfiguration.swift in Sources */,

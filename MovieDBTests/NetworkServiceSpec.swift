@@ -15,20 +15,20 @@ final class NetworkServiceSpec: QuickSpec {
         struct MockNetworkOperation: NetworkOperationable {
             func cancel() {
             }
-            
+
             func resume() {
             }
         }
-        
+
         var resultData: Data?
         var resultError: Error?
-        
+
         func dataTasks(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> NetworkOperationable {
             completionHandler(resultData, nil, resultError)
             return MockNetworkOperation()
         }
     }
-    
+
     override func spec() {
         describe("A NetworkService") {
             var networkService: NetworkServicing!
@@ -37,7 +37,7 @@ final class NetworkServiceSpec: QuickSpec {
                 networkProvider = MockNetworkProvider()
                 networkService = NetworkService(networkProvider: networkProvider)
             }
-            @discardableResult func executeMockedRequest(completionBlock: @escaping (Result<Data>) -> ()) -> NetworkOperationCancalable {
+            @discardableResult func executeMockedRequest(completionBlock: @escaping (Result<Data>, NetworkRequesting) -> ()) -> NetworkOperationCancalable {
                 return networkService.execute(request: URL(string: "http://example.com")!, completionBlock: completionBlock)
             }
 
@@ -48,7 +48,7 @@ final class NetworkServiceSpec: QuickSpec {
                     networkProvider.resultError = nil
 
                     waitUntil { done in
-                        executeMockedRequest(completionBlock: { (result) in
+                        executeMockedRequest(completionBlock: { (result, _) in
                             if case Result<Data>.success(let data) = result, networkProvider.resultData == data {
                             } else {
                                 fail("Expecting that the output data should be equal the mocked data")
@@ -64,7 +64,7 @@ final class NetworkServiceSpec: QuickSpec {
                     networkProvider.resultError = NSError(domain: "example.com", code: 0, userInfo: nil)
 
                     waitUntil { done in
-                        executeMockedRequest(completionBlock: { (result) in
+                        executeMockedRequest(completionBlock: { (result, _) in
                             if case Result<Data>.failure(_) = result {
                             } else {
                                 fail("Expecting that the output error should be equal the mocked error")

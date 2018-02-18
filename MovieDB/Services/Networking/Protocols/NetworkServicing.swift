@@ -9,5 +9,6 @@
 import Foundation
 
 protocol NetworkServicing {
-    @discardableResult func execute(request: NetworkRequesting, completionBlock: @escaping (Result<Data>) -> ()) -> NetworkOperationCancalable
+    @discardableResult func execute(request: NetworkRequesting,
+                                    completionBlock: @escaping (Result<Data>, NetworkRequesting) -> ()) -> NetworkOperationCancalable
 }
