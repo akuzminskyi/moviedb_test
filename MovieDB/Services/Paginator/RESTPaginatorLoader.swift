@@ -9,15 +9,13 @@
 import Foundation
 
 final class RESTPaginatorLoader {
-    let baseURL: URL
     let networkService: NetworkServicing
     let decoder: Decoderable
 
     //TODO: - replace Array to Set. A problem with Hashable
     private var requestsInProgress = [RESTPaginatorNetworkRequestable]()
 
-    init(baseURL: URL, networkService: NetworkServicing, decoder: Decoderable) {
-        self.baseURL = baseURL
+    init(networkService: NetworkServicing, decoder: Decoderable) {
         self.networkService = networkService
         self.decoder = decoder
     }

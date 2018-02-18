@@ -9,7 +9,7 @@
 import Foundation
 
 extension SearchViewModel: Searchable {
-    func search(term: String) {
+    func search(term: String?) {
 
     }
 }

@@ -10,8 +10,9 @@ import Foundation
 
 final class RESTPaginatorService<ItemType: Decodable> {
     //TODO: - move magic numbers to ...
-    var numberOfPages: Int = 1
-    var numberOfItems: Int = 0 {
+    var baseURL: URL
+    private(set) var numberOfPages: Int = 1
+    private(set) var numberOfItems: Int = 0 {
         didSet {
             guard oldValue != numberOfItems else {
                 return
@@ -32,13 +33,14 @@ final class RESTPaginatorService<ItemType: Decodable> {
         batchSize = configuration.batchSize
         pageParametrName = configuration.pageParametrName
         loader = configuration.loader
+        baseURL = configuration.baseURL
         try? load(page: configuration.inializationPage, force: true) // ignore case when the initial page is out of range,
     }
 
     //MARK: - private methods
 
     private func generateRequestFor(page: Int) -> RESTPaginatorNetworkRequestable? {
-        return RESTPaginatorNetworkRequest(baseURL: loader.baseURL,
+        return RESTPaginatorNetworkRequest(baseURL: baseURL,
                                            page: page,
                                            pageParameterName: pageParametrName)
     }
@@ -68,10 +70,6 @@ final class RESTPaginatorService<ItemType: Decodable> {
 }
 
 extension RESTPaginatorService: RESTPaginatorServicing {
-    var baseURL: URL {
-        return loader.baseURL
-    }
-
     func load(page: Int) throws {
         try load(page: page, force: false)
     }

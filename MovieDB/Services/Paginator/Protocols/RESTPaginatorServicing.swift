@@ -8,8 +8,8 @@
 
 import Foundation
 
-protocol RESTPaginatorServicing {
-    var baseURL: URL { get }
+protocol RESTPaginatorServicing: class {
+    var baseURL: URL { get set }
     var numberOfPages: Int { get }
     var numberOfItems: Int { get }
 

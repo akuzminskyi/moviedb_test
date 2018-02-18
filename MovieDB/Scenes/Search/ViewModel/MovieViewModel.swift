@@ -11,7 +11,7 @@ import Foundation
 struct MovieViewModel {
     let overview: String?
     let name: String?
-    let posterUrl: URL?
+    let posterRelativePath: String?
     let releaseDate: Date?
     var dateFormatter: DateFormatter
 }

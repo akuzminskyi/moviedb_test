@@ -9,6 +9,7 @@
 import Foundation
 
 struct RESTPaginatorServiceConfiguration {
+    let baseURL: URL
     let loader: RESTPaginatorLoaderable
     let batchSize: Int
     let pageParametrName: String

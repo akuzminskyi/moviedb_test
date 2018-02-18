@@ -8,8 +8,7 @@
 
 import Foundation
 
-protocol RESTPaginatorLoaderable {
-    var baseURL: URL { get }
+protocol RESTPaginatorLoaderable: class {
     var networkService: NetworkServicing { get }
     var decoder: Decoderable { get }
     func load<T: Decodable> (request: RESTPaginatorNetworkRequestable,
