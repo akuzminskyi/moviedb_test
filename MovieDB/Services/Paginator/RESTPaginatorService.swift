@@ -33,7 +33,7 @@ final class RESTPaginatorService<ItemType: Decodable> {
         batchSize = configuration.batchSize
         pageParametrName = configuration.pageParametrName
         loader = configuration.loader
-        baseURL = configuration.baseURL
+        baseURL = configuration.initBaseURL
         try? load(page: configuration.inializationPage, force: true) // ignore case when the initial page is out of range,
     }
 

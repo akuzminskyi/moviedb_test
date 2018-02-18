@@ -12,19 +12,7 @@ class SearchViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
 
-    lazy var viewModel: SearchViewModel<MovieViewModel>! = {
-        let networkProvider = URLSession.shared
-        let decoder = JSONDecoder()
-        let networkService = NetworkService(networkProvider: networkProvider)
-        let loader = RESTPaginatorLoader(networkService: networkService, decoder: decoder)
-        let configuration = RESTPaginatorServiceConfiguration(baseURL: URL(string: "http://api.themoviedb.org/3/search/movie")!,
-                                                              loader: loader,
-                                                              batchSize: 20,
-                                                              pageParametrName: "page",
-                                                              inializationPage: 1)
-        let paginator = RESTPaginatorService<MovieViewModel>(configuration: configuration)
-        return SearchViewModel<MovieViewModel>(paginator: paginator)
-    }()
+    var viewModel: SearchViewModel<MovieViewModel>!
 
     override func viewDidLoad() {
         super.viewDidLoad()

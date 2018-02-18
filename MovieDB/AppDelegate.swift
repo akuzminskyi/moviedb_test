@@ -15,7 +15,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+
+        func configureSearchViewModel() -> SearchViewModel<MovieViewModel> {
+            let networkProvider = URLSession.shared
+            let networkService = NetworkService(networkProvider: networkProvider)
+            let decoder = JSONDecoder()
+            let moviedbBatchSize = 20 // specification
+            let loader = RESTPaginatorLoader(networkService: networkService, decoder: decoder)
+            // 2696829a81b1b5827d515ff121700838
+            let apiKey: String! = nil
+
+            precondition(apiKey != nil, "The apikey shouldn't be nil. Please copy the apikey to the property")
+            func initUrl(withAPIKey apiKey: String) -> URL {
+                return URL(string: "http://api.themoviedb.org/3/search/movie?api_key=\(apiKey)")!
+            }
+            let initURL = initUrl(withAPIKey: apiKey)
+
+            let configuration = RESTPaginatorServiceConfiguration(initBaseURL: initURL,
+                                                                  loader: loader,
+                                                                  batchSize: moviedbBatchSize,
+                                                                  pageParametrName: "page",
+                                                                  inializationPage: 1)
+            let paginator = RESTPaginatorService<MovieViewModel>(configuration: configuration)
+
+            let imageCache = NSCache<NSURL, UIImage>()
+            let imageDownloadService = ImageDownloadService(cache: imageCache,
+                                                            networkService: networkService)
+            return SearchViewModel<MovieViewModel>(paginator: paginator,
+                                                   imageDownloadService: imageDownloadService)
+        }
+
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let rootViewController = storyboard.instantiateInitialViewController() as! UINavigationController
+        window?.rootViewController = rootViewController
+
+        let collectionViewContoller = rootViewController.viewControllers.first as! SearchViewController
+        collectionViewContoller.viewModel = configureSearchViewModel()
         return true
     }
 
