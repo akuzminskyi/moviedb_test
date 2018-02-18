@@ -24,6 +24,7 @@
 		B70AD6A92039A4CC00E99E1B /* MovieViewModel+MovieViewModeling.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AD6A82039A4CC00E99E1B /* MovieViewModel+MovieViewModeling.swift */; };
 		B70AD6AB2039AC7900E99E1B /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AD6AA2039AC7900E99E1B /* Searchable.swift */; };
 		B70AD6AD2039ACEC00E99E1B /* SearchViewModel+Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AD6AC2039ACEC00E99E1B /* SearchViewModel+Searchable.swift */; };
+		B70AD6AF2039AD1700E99E1B /* ItemModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B70AD6AE2039AD1700E99E1B /* ItemModelState.swift */; };
 		B7154B842038523200DACF64 /* RESTPaginatorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7154B832038523200DACF64 /* RESTPaginatorResponse.swift */; };
 		B7154B872038536200DACF64 /* RESTPaginatorResponsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7154B862038536200DACF64 /* RESTPaginatorResponsable.swift */; };
 		B7154B8A2038603500DACF64 /* RESTPaginatorNetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7154B892038603500DACF64 /* RESTPaginatorNetworkRequest.swift */; };
@@ -102,6 +103,7 @@
 		B70AD6A82039A4CC00E99E1B /* MovieViewModel+MovieViewModeling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MovieViewModel+MovieViewModeling.swift"; sourceTree = "<group>"; };
 		B70AD6AA2039AC7900E99E1B /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
 		B70AD6AC2039ACEC00E99E1B /* SearchViewModel+Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewModel+Searchable.swift"; sourceTree = "<group>"; };
+		B70AD6AE2039AD1700E99E1B /* ItemModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModelState.swift; sourceTree = "<group>"; };
 		B7154B832038523200DACF64 /* RESTPaginatorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorResponse.swift; sourceTree = "<group>"; };
 		B7154B862038536200DACF64 /* RESTPaginatorResponsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorResponsable.swift; sourceTree = "<group>"; };
 		B7154B892038603500DACF64 /* RESTPaginatorNetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorNetworkRequest.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 				B70AD69520398EE600E99E1B /* SearchViewModeling.swift */,
 				B70AD69C203996AF00E99E1B /* MovieViewModel.swift */,
 				B70AD69E203996BA00E99E1B /* MovieViewModeling.swift */,
+				B70AD6AE2039AD1700E99E1B /* ItemModelState.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -683,6 +686,7 @@
 				B71DB58920377074003608AC /* RESTPaginatorServicing.swift in Sources */,
 				B7154B912038691900DACF64 /* JSONDecoder+Decoderable.swift in Sources */,
 				B7C81CE12038D09A0012BF84 /* RESTPaginatorLoaderable.swift in Sources */,
+				B70AD6AF2039AD1700E99E1B /* ItemModelState.swift in Sources */,
 				B7C24A782039886E00B52C6D /* RESTPaginatorErrorDelegate.swift in Sources */,
 				B70AD6A52039A07300E99E1B /* SearchViewController+UITableViewDataSource.swift in Sources */,
 				B7C9195C2034B24E00111DBE /* ViewController.swift in Sources */,
