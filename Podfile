@@ -2,7 +2,8 @@ source 'https://github.com/CocoaPods/Specs.git'
 target 'MovieDB' do
     platform :ios, '10.0'
     use_frameworks!
-    
+    pod 'Reusable', '~> 4.0'
+
     target 'MovieDBTests' do
         inherit! :search_paths
         pod 'Nimble'

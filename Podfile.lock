@@ -1,15 +1,22 @@
 PODS:
   - Nimble (7.0.3)
   - Quick (1.2.0)
+  - Reusable (4.0.0):
+    - Reusable/Storyboard (= 4.0.0)
+    - Reusable/View (= 4.0.0)
+  - Reusable/Storyboard (4.0.0)
+  - Reusable/View (4.0.0)
 
 DEPENDENCIES:
   - Nimble
   - Quick
+  - Reusable (~> 4.0)
 
 SPEC CHECKSUMS:
   Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  Reusable: 98e5fff1e0e2e00872199699b276dde08ee56c07
 
-PODFILE CHECKSUM: 858d2debed80cdf5a80ee2e8031fbd8f633d29ef
+PODFILE CHECKSUM: 5659232c48c5a5c6a267aa8baa3476e839086f31
 
 COCOAPODS: 1.3.1
