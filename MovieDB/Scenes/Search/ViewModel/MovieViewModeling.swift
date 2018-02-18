@@ -10,7 +10,7 @@ import Foundation
 
 protocol MovieViewModeling {
     var overview: String? { get }
-    var releaseDate: String? { get }
+    var releaseDateString: String? { get }
     var name: String? { get }
     var posterUrl: URL? { get }
 }

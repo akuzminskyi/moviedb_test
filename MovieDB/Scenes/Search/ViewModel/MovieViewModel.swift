@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+struct MovieViewModel {
+    let overview: String?
+    let name: String?
+    let posterUrl: URL?
+    let releaseDate: Date?
+    var dateFormater: DateFormatter
+}

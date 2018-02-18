@@ -17,7 +17,7 @@ class MovieCell: UITableViewCell {
     func configCell(with viewModel: MovieViewModeling) {
         posterImageView.image = nil
         titleLabel.text = viewModel.name
-        releaseDataLabel.text = viewModel.releaseDate
+        releaseDataLabel.text = viewModel.releaseDateString
         overviewLabel.text = viewModel.overview
     }
 }
