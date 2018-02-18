@@ -13,6 +13,30 @@ extension MovieViewModel: MovieViewModeling {
         guard let date = releaseDate else {
             return nil
         }
-        return dateFormater.string(from: date)
+        return dateFormatter.string(from: date)
+    }
+}
+
+extension MovieViewModel: Decodable {
+    enum CodingKeys: String, CodingKey {
+        case overview
+        case name = "title"
+        case posterRelativePath = "poster_path"
+        case releaseDate = "release_date"
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+
+        overview = try container.decodeIfPresent(String.self, forKey: .overview)
+        name = try container.decodeIfPresent(String.self, forKey: .name)
+        posterRelativePath = try container.decodeIfPresent(String.self, forKey: .posterRelativePath)
+        dateFormatter = DateFormatter.yyyyMMdd
+
+        if let stringDate = try container.decodeIfPresent(String.self, forKey: .releaseDate) {
+            releaseDate = DateFormatter.yyyyMMdd.date(from: stringDate)
+        } else {
+            releaseDate = nil
+        }
     }
 }

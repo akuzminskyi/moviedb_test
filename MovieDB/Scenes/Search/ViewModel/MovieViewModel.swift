@@ -13,5 +13,5 @@ struct MovieViewModel {
     let name: String?
     let posterUrl: URL?
     let releaseDate: Date?
-    var dateFormater: DateFormatter
+    var dateFormatter: DateFormatter
 }
