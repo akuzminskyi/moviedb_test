@@ -9,5 +9,6 @@
 import Foundation
 
 protocol RESTPaginatorItemLoadable {
-    func load(itemAtIndex index: Int) throws
+    func loadItem(at index: Int, force: Bool) throws
+    func loadItem(at index: Int) throws
 }

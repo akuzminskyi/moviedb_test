@@ -44,14 +44,21 @@ final class RESTPaginatorService<ItemType: Decodable> {
                                            page: page,
                                            pageParameterName: pageParametrName)
     }
+}
 
-    private func load(page: Int, force: Bool) throws {
+extension RESTPaginatorService: RESTPaginatorServicing {
+    func load(page: Int) throws {
+        try load(page: page, force: false)
+    }
+
+    func load(page: Int, force: Bool) throws {
         guard force || page <= numberOfPages else {
             throw RESTPaginatorError.pageOutOfRange
         }
         guard let request = generateRequestFor(page: page) else {
             throw RESTPaginatorError.creatingRequest
         }
+
         loader.load(request: request) { [weak self] (responseResult: Result<RESTPaginatorResponse<ItemType>>) in
             guard let `self` = self else {
                 return
@@ -61,34 +68,26 @@ final class RESTPaginatorService<ItemType: Decodable> {
             case .failure(let error):
                 self.errorDelegate?.paginator(paginator: self, caught: error)
             case .success(let response):
+                func compaund(result: [ItemType], atPage page: Int, withBatchSize batchSize: Int) -> [Int: ItemType] {
+                    var compaundedResult = [Int: ItemType]()
+                    let pageOffsetIndex = (page-1) * batchSize
+
+                    for (index, item) in result.enumerated() {
+                        let itemIndex = pageOffsetIndex + index
+                        compaundedResult[itemIndex] = item
+                    }
+                    return compaundedResult
+                }
+
                 self.numberOfPages = response.numberOfPages
                 self.numberOfItems = response.numberOfResults
-                self.delegate?.paginator(paginator: self, loaded: response.results, at: page)
+
+                let compaundedResult = compaund(result: response.results,
+                                                atPage: page,
+                                                withBatchSize: self.batchSize)
+
+                self.delegate?.paginator(paginator: self, loaded: compaundedResult, at: page)
             }
         }
-    }
-}
-
-extension RESTPaginatorService: RESTPaginatorServicing {
-    func load(page: Int) throws {
-        try load(page: page, force: false)
-    }
-}
-
-extension RESTPaginatorService: RESTPaginatorItemLoadable {
-    private func load(itemAtIndex index: Int, force: Bool) throws {
-        func pageForItem(at index: Int) -> Int {
-            return index / batchSize + index % batchSize == 0 ? 1 : 0
-        }
-
-        guard index < numberOfItems else {
-            throw RESTPaginatorError.itemOutOfRange
-        }
-        let page = pageForItem(at: index)
-        try load(page: page, force: force)
-    }
-
-    func load(itemAtIndex index: Int) throws {
-        try load(itemAtIndex: index, force: false)
     }
 }

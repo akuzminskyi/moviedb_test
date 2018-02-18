@@ -8,13 +8,15 @@
 
 import Foundation
 
-protocol RESTPaginatorServicing: class {
+protocol RESTPaginatorServicing: class, RESTPaginatorItemLoadable {
     var baseURL: URL { get set }
     var numberOfPages: Int { get }
     var numberOfItems: Int { get }
+    var batchSize: Int { get }
 
     var delegate: RESTPaginatorDelegate? { set get }
     var errorDelegate: RESTPaginatorErrorDelegate? { set get }
 
+    func load(page: Int, force: Bool) throws
     func load(page: Int) throws
 }
