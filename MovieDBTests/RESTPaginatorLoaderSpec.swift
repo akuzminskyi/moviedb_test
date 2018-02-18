@@ -23,7 +23,6 @@ final class RESTPaginatorLoaderSpec: QuickSpec {
 
     override func spec() {
         describe("A RESTPaginatorLoader") {
-            let baseUrl = URL(string: "http://www.example.com/")!
             var loader: RESTPaginatorLoader!
             var networkProvider: MockedNetworkProvider!
             var request: RESTPaginatorNetworkRequestable!
@@ -33,8 +32,7 @@ final class RESTPaginatorLoaderSpec: QuickSpec {
                 networkProvider = MockedNetworkProvider()
                 let networkService = NetworkService(networkProvider: networkProvider)
 
-                loader = RESTPaginatorLoader(baseURL: baseUrl,
-                                             networkService: networkService,
+                loader = RESTPaginatorLoader(networkService: networkService,
                                              decoder: decoder)
 
             }
