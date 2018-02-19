@@ -24,13 +24,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                                   batchSize: moviedbBatchSize,
                                                                   pageParametrName: "page",
                                                                   inializationPage: 1)
-            let paginator = RESTPaginatorService<MovieViewModel>(configuration: configuration)
+            let paginator: RESTPaginatorServicing = RESTPaginatorService<MovieViewModel>(configuration: configuration)
 
             let imageCache = NSCache<NSURL, UIImage>()
             let imageDownloadService = ImageDownloadService(cache: imageCache,
                                                             networkService: networkService)
+
+            let dataStorage: DataStoraging = UserDefaults.standard
+            let recentlySearch = RecentlySearchService<String>(dataStorage: dataStorage)
+
             return SearchViewModel<MovieViewModel>(paginator: paginator,
-                                                   imageDownloadService: imageDownloadService)
+                                                   imageDownloadService: imageDownloadService,
+                                                   recentlySearch: recentlySearch,
+                                                   recentlyDisplayedItems: 10)
         }
 
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)

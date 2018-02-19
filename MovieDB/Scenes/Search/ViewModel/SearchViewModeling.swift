@@ -8,10 +8,11 @@
 
 import Foundation
 
-protocol SearchViewModeling: Searchable, SearchViewModelingDataSource {
+protocol SearchViewModeling: Searchable, SearchViewModelingDataSource, RecentlySearchable {
     var itemsDidChange: (() -> ())? { set get }
     var itemsDidChangeAt: (([IndexPath]) -> ())? { set get }
     func loadItems(at indexPaths: [IndexPath])
+    func clearResult()
 }
 
 extension SearchViewModeling {

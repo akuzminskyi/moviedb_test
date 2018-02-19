@@ -12,11 +12,12 @@ class SearchViewController: UIViewController {
     @IBOutlet private weak var searchBar: UISearchBar!
     @IBOutlet private weak var tableView: UITableView!
 
+    //TODO: - replace to protocol(the same problem with RecentlySearchService)
     var viewModel: SearchViewModel<MovieViewModel>!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+
         tableView.register(cellType: MovieCell.self)
         viewModel.itemsDidChange = { [unowned self] in
             self.tableView.reloadData()

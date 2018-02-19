@@ -12,4 +12,14 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.search(term: searchBar.text)
     }
+
+    func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {
+        //TODO: - a magic number
+        let lastSearchedItem = viewModel.recentlyResults()
+        print("Recently search item: \(lastSearchedItem)")
+    }
+
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.clearResult()
+    }
 }

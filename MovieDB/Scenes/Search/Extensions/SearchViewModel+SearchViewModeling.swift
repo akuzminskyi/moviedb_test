@@ -37,4 +37,10 @@ extension SearchViewModel: SearchViewModeling {
             }
         }
     }
+
+    func clearResult() {
+        paginator.baseURL = nil
+        items.removeAll()
+        itemsDidChange?()
+    }
 }
