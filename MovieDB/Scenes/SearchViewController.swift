@@ -16,6 +16,7 @@ class SearchViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+  
         tableView.register(cellType: MovieCell.self)
         viewModel.itemsDidChange = { [unowned self] in
             self.tableView.reloadData()

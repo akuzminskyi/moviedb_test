@@ -9,7 +9,7 @@
 import Foundation
 
 protocol RESTPaginatorServicing: class, RESTPaginatorItemLoadable {
-    var baseURL: URL { get set }
+    var baseURL: URL? { set get }
     var numberOfPages: Int { get }
     var numberOfItems: Int { get }
     var batchSize: Int { get }
@@ -19,4 +19,11 @@ protocol RESTPaginatorServicing: class, RESTPaginatorItemLoadable {
 
     func load(page: Int, force: Bool) throws
     func load(page: Int) throws
+}
+
+extension RESTPaginatorServicing {
+    func loadFirstPage() throws {
+        let firstPage = 1 // as init page
+        try load(page: firstPage)
+    }
 }

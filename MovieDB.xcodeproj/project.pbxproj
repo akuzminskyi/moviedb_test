@@ -60,6 +60,7 @@
 		B7922213203B396D0054681E /* ApiProviderSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922212203B396D0054681E /* ApiProviderSpec.swift */; };
 		B7922215203B42610054681E /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922214203B42610054681E /* ImageSize.swift */; };
 		B7922217203B47FF0054681E /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922216203B47FF0054681E /* ApiPath.swift */; };
+		B7922219203B4F4E0054681E /* ApiProvider+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922218203B4F4E0054681E /* ApiProvider+Shared.swift */; };
 		B7C24A732038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */; };
 		B7C24A762039763C00B52C6D /* MockedNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A752039763C00B52C6D /* MockedNetworkProvider.swift */; };
 		B7C24A782039886E00B52C6D /* RESTPaginatorErrorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A772039886E00B52C6D /* RESTPaginatorErrorDelegate.swift */; };
@@ -155,6 +156,7 @@
 		B7922212203B396D0054681E /* ApiProviderSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderSpec.swift; sourceTree = "<group>"; };
 		B7922214203B42610054681E /* ImageSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		B7922216203B47FF0054681E /* ApiPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPath.swift; sourceTree = "<group>"; };
+		B7922218203B4F4E0054681E /* ApiProvider+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiProvider+Shared.swift"; sourceTree = "<group>"; };
 		B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RESTPaginatorNetworkRequestable.swift"; sourceTree = "<group>"; };
 		B7C24A752039763C00B52C6D /* MockedNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkProvider.swift; sourceTree = "<group>"; };
 		B7C24A772039886E00B52C6D /* RESTPaginatorErrorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorErrorDelegate.swift; sourceTree = "<group>"; };
@@ -373,6 +375,7 @@
 				B7922214203B42610054681E /* ImageSize.swift */,
 				B7922210203B39180054681E /* ApiVersion.swift */,
 				B7922216203B47FF0054681E /* ApiPath.swift */,
+				B7922218203B4F4E0054681E /* ApiProvider+Shared.swift */,
 			);
 			path = ApiProvider;
 			sourceTree = "<group>";
@@ -796,6 +799,7 @@
 				B7154B8D203868AF00DACF64 /* Decoderable.swift in Sources */,
 				B70AD6A72039A09000E99E1B /* SearchViewController+UITableViewDataSourcePrefetching.swift in Sources */,
 				B70AD69220398E8800E99E1B /* SearchViewController.swift in Sources */,
+				B7922219203B4F4E0054681E /* ApiProvider+Shared.swift in Sources */,
 				B79221F9203A1B9C0054681E /* SearchViewModel+RESTPaginatorDelegate.swift in Sources */,
 				B70AD6AD2039ACEC00E99E1B /* SearchViewModel+Searchable.swift in Sources */,
 				B7154B9D2038919E00DACF64 /* RESTPaginatorNetworkRequestable.swift in Sources */,
