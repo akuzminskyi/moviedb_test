@@ -10,12 +10,9 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
         func configureSearchViewModel() -> SearchViewModel<MovieViewModel> {
             let networkProvider = URLSession.shared
             let networkService = NetworkService(networkProvider: networkProvider)
@@ -24,13 +21,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let loader = RESTPaginatorLoader(networkService: networkService, decoder: decoder)
             // 2696829a81b1b5827d515ff121700838
             let apiKey: String! = nil
+            let apiProvider = ApiProvider(apiDomain: URL(string: "http://api.themoviedb.org/")!,
+                                          imageDomain: URL(string: "http://image.tmdb.org/t/p/")!,
+                                          apiKey: ("api_url", apiKey),
+                                          apiVersion: .v3)
 
             precondition(apiKey != nil, "The apikey shouldn't be nil. Please copy the apikey to the property")
-            func initUrl(withAPIKey apiKey: String) -> URL {
-                return URL(string: "http://api.themoviedb.org/3/search/movie?api_key=\(apiKey)")!
-            }
-            let initURL = initUrl(withAPIKey: apiKey)
-
+            
+            let initURL = apiProvider.apiURL(withAPI: .searchMovie)!
             let configuration = RESTPaginatorServiceConfiguration(initBaseURL: initURL,
                                                                   loader: loader,
                                                                   batchSize: moviedbBatchSize,
