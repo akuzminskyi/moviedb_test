@@ -13,9 +13,16 @@ protocol RESTPaginatorDelegate: class {
     ///
     /// - Parameters:
     ///   - paginator: a paginator that handled loading
+    ///   - request: a send request
     ///   - items: [Int: ItemType] where key is index of item and value is item that was loaded
     ///   - page: page that was loaded
-    func paginator<ItemType>(paginator: RESTPaginatorServicing, loaded items: [Int: ItemType], at page: Int)
-    func paginator(paginator: RESTPaginatorServicing, numberOfItemsDidChange numberOfItems: Int)
+    func paginator<ItemType>(paginator: RESTPaginatorServicing,
+                             loaded request: URL,
+                             with items: [Int: ItemType],
+                             at page: Int)
+    
+    func paginator(paginator: RESTPaginatorServicing,
+                   numberOfItemsDidChange numberOfItems: Int,
+                   forRequest request: URL)
 }
 

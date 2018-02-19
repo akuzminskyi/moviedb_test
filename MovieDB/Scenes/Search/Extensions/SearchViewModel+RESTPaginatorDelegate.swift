@@ -9,7 +9,10 @@
 import Foundation
 
 extension SearchViewModel: RESTPaginatorDelegate {
-    func paginator<Item>(paginator: RESTPaginatorServicing, loaded items: [Int: Item], at page: Int) {
+    func paginator<ItemType>(paginator: RESTPaginatorServicing,
+                             loaded request: URL,
+                             with items: [Int: ItemType],
+                             at page: Int) {
         items.forEach { (arg) in
             let (index, item) = arg
             self.items[index] = ItemModelState.loaded(item) as! ItemModelState
@@ -24,11 +27,9 @@ extension SearchViewModel: RESTPaginatorDelegate {
         }
     }
 
-    func paginator(paginator: RESTPaginatorServicing, numberOfItemsDidChange numberOfItems: Int) {
+    func paginator(paginator: RESTPaginatorServicing, numberOfItemsDidChange numberOfItems: Int, forRequest request: URL) {
         items = [ItemModelState<Item>](repeatElement(.empty,
                                                      count: numberOfItems))
-        DispatchQueue.main.async { [weak self] in
-            self?.itemsDidChange?()
-        }
+        newItemsHaveFetched(forRequest: paginator.baseURL!)
     }
 }

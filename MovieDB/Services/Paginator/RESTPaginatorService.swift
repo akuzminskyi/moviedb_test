@@ -10,18 +10,10 @@ import Foundation
 
 final class RESTPaginatorService<ItemType: Decodable> {
     var baseURL: URL?
-    
+
     //TODO: - move magic numbers to ...
     private(set) var numberOfPages: Int = 1
-    private(set) var numberOfItems: Int = 0 {
-        didSet {
-            guard oldValue != numberOfItems else {
-                return
-            }
-            self.delegate?.paginator(paginator: self, numberOfItemsDidChange: numberOfItems)
-        }
-    }
-
+    private(set) var numberOfItems: Int = 0
     let batchSize: Int
 
     weak var delegate: RESTPaginatorDelegate?
@@ -43,7 +35,7 @@ final class RESTPaginatorService<ItemType: Decodable> {
         guard let url = baseURL else {
             return nil
         }
-       
+
         return RESTPaginatorNetworkRequest(baseURL: url,
                                            page: page,
                                            pageParameterName: pageParametrName)
@@ -84,13 +76,21 @@ extension RESTPaginatorService: RESTPaginatorServicing {
                 }
 
                 self.numberOfPages = response.numberOfPages
-                self.numberOfItems = response.numberOfResults
+                if self.numberOfItems != response.numberOfResults {
+                    self.numberOfItems = response.numberOfResults
+                    self.delegate?.paginator(paginator: self,
+                                             numberOfItemsDidChange: self.numberOfItems,
+                                             forRequest: request.url)
+                }
 
                 let compaundedResult = compaund(result: response.results,
                                                 atPage: page,
                                                 withBatchSize: self.batchSize)
 
-                self.delegate?.paginator(paginator: self, loaded: compaundedResult, at: page)
+                self.delegate?.paginator(paginator: self,
+                                         loaded: request.url,
+                                         with: compaundedResult,
+                                         at: page)
             }
         }
     }
