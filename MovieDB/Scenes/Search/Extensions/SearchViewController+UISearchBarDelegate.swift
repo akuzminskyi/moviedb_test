@@ -11,15 +11,21 @@ import UIKit
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.search(term: searchBar.text)
+        searchBar.endEditing(true)
     }
 
-    func searchBarResultsListButtonClicked(_ searchBar: UISearchBar) {
-        //TODO: - a magic number
-        let lastSearchedItem = viewModel.recentlyResults()
-        print("Recently search item: \(lastSearchedItem)")
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        recentlyResultContainerView.isHidden = false
+        recentlyViewController?.viewModel = viewModel.recentlyResults()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        recentlyResultContainerView.isHidden = true
+        recentlyViewController?.viewModel = []
     }
 
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
         viewModel.clearResult()
     }
 }

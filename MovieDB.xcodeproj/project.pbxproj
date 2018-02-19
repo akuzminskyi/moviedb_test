@@ -70,6 +70,9 @@
 		B7C24A732038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */; };
 		B7C24A762039763C00B52C6D /* MockedNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A752039763C00B52C6D /* MockedNetworkProvider.swift */; };
 		B7C24A782039886E00B52C6D /* RESTPaginatorErrorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A772039886E00B52C6D /* RESTPaginatorErrorDelegate.swift */; };
+		B7C5A4FB203B7C330069D176 /* RecentlySearchedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5A4FA203B7C330069D176 /* RecentlySearchedViewController.swift */; };
+		B7C5A4FD203B81180069D176 /* RecentlySearchedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5A4FC203B81180069D176 /* RecentlySearchedViewControllerDelegate.swift */; };
+		B7C5A4FF203B824B0069D176 /* SearchViewController+RecentlySearchedViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C5A4FE203B824B0069D176 /* SearchViewController+RecentlySearchedViewControllerDelegate.swift */; };
 		B7C81CE12038D09A0012BF84 /* RESTPaginatorLoaderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CE02038D09A0012BF84 /* RESTPaginatorLoaderable.swift */; };
 		B7C81CE32038D0BE0012BF84 /* RESTPaginatorLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CE22038D0BE0012BF84 /* RESTPaginatorLoader.swift */; };
 		B7C81CE62038D5170012BF84 /* RESTPaginatorLoaderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C81CE52038D5170012BF84 /* RESTPaginatorLoaderError.swift */; };
@@ -172,6 +175,9 @@
 		B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RESTPaginatorNetworkRequestable.swift"; sourceTree = "<group>"; };
 		B7C24A752039763C00B52C6D /* MockedNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkProvider.swift; sourceTree = "<group>"; };
 		B7C24A772039886E00B52C6D /* RESTPaginatorErrorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorErrorDelegate.swift; sourceTree = "<group>"; };
+		B7C5A4FA203B7C330069D176 /* RecentlySearchedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlySearchedViewController.swift; sourceTree = "<group>"; };
+		B7C5A4FC203B81180069D176 /* RecentlySearchedViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentlySearchedViewControllerDelegate.swift; sourceTree = "<group>"; };
+		B7C5A4FE203B824B0069D176 /* SearchViewController+RecentlySearchedViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchViewController+RecentlySearchedViewControllerDelegate.swift"; sourceTree = "<group>"; };
 		B7C81CE02038D09A0012BF84 /* RESTPaginatorLoaderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoaderable.swift; sourceTree = "<group>"; };
 		B7C81CE22038D0BE0012BF84 /* RESTPaginatorLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoader.swift; sourceTree = "<group>"; };
 		B7C81CE52038D5170012BF84 /* RESTPaginatorLoaderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorLoaderError.swift; sourceTree = "<group>"; };
@@ -247,6 +253,7 @@
 		B70AD68920398C0F00E99E1B /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				B7C5A4F9203B7C060069D176 /* RecentySearched */,
 				B70AD68A20398C2700E99E1B /* Search */,
 				B70AD69120398E8800E99E1B /* SearchViewController.swift */,
 			);
@@ -424,6 +431,16 @@
 				B7C24A752039763C00B52C6D /* MockedNetworkProvider.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		B7C5A4F9203B7C060069D176 /* RecentySearched */ = {
+			isa = PBXGroup;
+			children = (
+				B7C5A4FA203B7C330069D176 /* RecentlySearchedViewController.swift */,
+				B7C5A4FC203B81180069D176 /* RecentlySearchedViewControllerDelegate.swift */,
+				B7C5A4FE203B824B0069D176 /* SearchViewController+RecentlySearchedViewControllerDelegate.swift */,
+			);
+			path = RecentySearched;
 			sourceTree = "<group>";
 		};
 		B7C81CE72038DCCD0012BF84 /* Resources */ = {
@@ -828,6 +845,7 @@
 				B7C9198A2034BC4F00111DBE /* NetworkService.swift in Sources */,
 				B7154B872038536200DACF64 /* RESTPaginatorResponsable.swift in Sources */,
 				B7922215203B42610054681E /* ImageSize.swift in Sources */,
+				B7C5A4FF203B824B0069D176 /* SearchViewController+RecentlySearchedViewControllerDelegate.swift in Sources */,
 				B7922208203A30CF0054681E /* ImageDownloadService.swift in Sources */,
 				B7154B942038726800DACF64 /* RESTPaginatorResponse+Decodable.swift in Sources */,
 				B70AD6A32039A04900E99E1B /* MovieCell+NibReusable .swift in Sources */,
@@ -852,6 +870,8 @@
 				B70AD6AD2039ACEC00E99E1B /* SearchViewModel+Searchable.swift in Sources */,
 				B7154B9D2038919E00DACF64 /* RESTPaginatorNetworkRequestable.swift in Sources */,
 				B70AD68720398BB600E99E1B /* URLSession+NetworkProviding.swift in Sources */,
+				B7C5A4FB203B7C330069D176 /* RecentlySearchedViewController.swift in Sources */,
+				B7C5A4FD203B81180069D176 /* RecentlySearchedViewControllerDelegate.swift in Sources */,
 				B71DB58F203776A3003608AC /* RESTPaginatorServiceConfiguration.swift in Sources */,
 				B7922203203A2F420054681E /* SearchViewController+UISearchBarDelegate.swift in Sources */,
 				B7154B842038523200DACF64 /* RESTPaginatorResponse.swift in Sources */,

@@ -11,5 +11,6 @@ import UIKit
 extension SearchViewController: UITableViewDataSourcePrefetching {
     func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
         viewModel.loadItems(at: indexPaths)
+        self.view.endEditing(true)
     }
 }

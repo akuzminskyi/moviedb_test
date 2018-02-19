@@ -18,17 +18,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KcD-xI-sAE">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="eMg-Zy-SBn" id="etO-ua-m8k"/>
+                                </connections>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5h8-qE-S5E">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <searchBar key="tableHeaderView" contentMode="redraw" showsSearchResultsButton="YES" id="KcD-xI-sAE">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" keyboardAppearance="light" returnKeyType="search" enablesReturnKeyAutomatically="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="eMg-Zy-SBn" id="etO-ua-m8k"/>
-                                    </connections>
-                                </searchBar>
                                 <sections/>
                                 <connections>
                                     <outlet property="dataSource" destination="eMg-Zy-SBn" id="6hf-9w-xIW"/>
@@ -36,25 +35,76 @@
                                     <outlet property="prefetchDataSource" destination="eMg-Zy-SBn" id="bBe-pR-5gs"/>
                                 </connections>
                             </tableView>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="45Y-sy-nxf">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <connections>
+                                    <segue destination="hcL-rU-nK0" kind="embed" identifier="SearchToRecentySegue" id="9Zi-wE-Fop"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="45Y-sy-nxf" firstAttribute="bottom" secondItem="5h8-qE-S5E" secondAttribute="bottom" id="3rC-3k-nYm"/>
                             <constraint firstItem="tt8-14-kdm" firstAttribute="bottom" secondItem="5h8-qE-S5E" secondAttribute="bottom" id="64v-qO-4dK"/>
-                            <constraint firstItem="5h8-qE-S5E" firstAttribute="top" secondItem="tt8-14-kdm" secondAttribute="top" id="MXb-7K-pQt"/>
+                            <constraint firstItem="45Y-sy-nxf" firstAttribute="leading" secondItem="5h8-qE-S5E" secondAttribute="leading" id="CIW-Xg-gT9"/>
+                            <constraint firstItem="KcD-xI-sAE" firstAttribute="leading" secondItem="tt8-14-kdm" secondAttribute="leading" id="FXo-pU-hmV"/>
+                            <constraint firstItem="KcD-xI-sAE" firstAttribute="trailing" secondItem="tt8-14-kdm" secondAttribute="trailing" id="Lz1-ge-87E"/>
                             <constraint firstItem="5h8-qE-S5E" firstAttribute="leading" secondItem="tt8-14-kdm" secondAttribute="leading" id="Qvd-S9-AqC"/>
+                            <constraint firstItem="KcD-xI-sAE" firstAttribute="top" secondItem="tt8-14-kdm" secondAttribute="top" id="Z5l-ig-A9Z"/>
+                            <constraint firstItem="45Y-sy-nxf" firstAttribute="trailing" secondItem="5h8-qE-S5E" secondAttribute="trailing" id="jbB-Yv-zBf"/>
+                            <constraint firstItem="5h8-qE-S5E" firstAttribute="top" secondItem="KcD-xI-sAE" secondAttribute="bottom" id="oHQ-2o-j6m"/>
+                            <constraint firstItem="45Y-sy-nxf" firstAttribute="top" secondItem="5h8-qE-S5E" secondAttribute="top" id="oXZ-j8-2Gh"/>
                             <constraint firstItem="tt8-14-kdm" firstAttribute="trailing" secondItem="5h8-qE-S5E" secondAttribute="trailing" id="yW7-5j-n8T"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="tt8-14-kdm"/>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="recentlyResultContainerView" destination="45Y-sy-nxf" id="pQ6-3a-HaM"/>
                         <outlet property="searchBar" destination="KcD-xI-sAE" id="J0q-aJ-OPo"/>
                         <outlet property="tableView" destination="5h8-qE-S5E" id="ktm-B1-g0j"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zR3-95-6w2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="272" y="199"/>
+            <point key="canvasLocation" x="271.19999999999999" y="198.35082458770617"/>
+        </scene>
+        <!--Recently Searched View Controller-->
+        <scene sceneID="vR1-ub-TMv">
+            <objects>
+                <tableViewController id="hcL-rU-nK0" customClass="RecentlySearchedViewController" customModule="MovieDB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="5II-Fb-Jzl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="547"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="108-7A-HQT" style="IBUITableViewCellStyleDefault" id="3fm-2h-ezu">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3fm-2h-ezu" id="viC-Lm-RoJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="108-7A-HQT">
+                                            <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hcL-rU-nK0" id="Dno-BC-uCQ"/>
+                            <outlet property="delegate" destination="hcL-rU-nK0" id="iSW-xH-OJh"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6vE-ih-fgC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1222" y="198"/>
         </scene>
     </scenes>
 </document>
