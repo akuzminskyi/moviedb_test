@@ -61,6 +61,8 @@
 		B7922215203B42610054681E /* ImageSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922214203B42610054681E /* ImageSize.swift */; };
 		B7922217203B47FF0054681E /* ApiPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922216203B47FF0054681E /* ApiPath.swift */; };
 		B7922219203B4F4E0054681E /* ApiProvider+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7922218203B4F4E0054681E /* ApiProvider+Shared.swift */; };
+		B792221C203B5B5F0054681E /* DataStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = B792221B203B5B5F0054681E /* DataStoraging.swift */; };
+		B7A6DECD203B5EEA00241693 /* UserDefaults+DataStoraging.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7A6DECC203B5EEA00241693 /* UserDefaults+DataStoraging.swift */; };
 		B7C24A732038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */; };
 		B7C24A762039763C00B52C6D /* MockedNetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A752039763C00B52C6D /* MockedNetworkProvider.swift */; };
 		B7C24A782039886E00B52C6D /* RESTPaginatorErrorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C24A772039886E00B52C6D /* RESTPaginatorErrorDelegate.swift */; };
@@ -157,6 +159,8 @@
 		B7922214203B42610054681E /* ImageSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageSize.swift; sourceTree = "<group>"; };
 		B7922216203B47FF0054681E /* ApiPath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiPath.swift; sourceTree = "<group>"; };
 		B7922218203B4F4E0054681E /* ApiProvider+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiProvider+Shared.swift"; sourceTree = "<group>"; };
+		B792221B203B5B5F0054681E /* DataStoraging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStoraging.swift; sourceTree = "<group>"; };
+		B7A6DECC203B5EEA00241693 /* UserDefaults+DataStoraging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+DataStoraging.swift"; sourceTree = "<group>"; };
 		B7C24A722038F84400B52C6D /* Array+RESTPaginatorNetworkRequestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+RESTPaginatorNetworkRequestable.swift"; sourceTree = "<group>"; };
 		B7C24A752039763C00B52C6D /* MockedNetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedNetworkProvider.swift; sourceTree = "<group>"; };
 		B7C24A772039886E00B52C6D /* RESTPaginatorErrorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RESTPaginatorErrorDelegate.swift; sourceTree = "<group>"; };
@@ -380,6 +384,23 @@
 			path = ApiProvider;
 			sourceTree = "<group>";
 		};
+		B792221A203B5B390054681E /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				B7A6DECB203B5ED800241693 /* Extensions */,
+				B792221B203B5B5F0054681E /* DataStoraging.swift */,
+			);
+			path = DataStorage;
+			sourceTree = "<group>";
+		};
+		B7A6DECB203B5ED800241693 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B7A6DECC203B5EEA00241693 /* UserDefaults+DataStoraging.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		B7C24A742039761800B52C6D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -462,6 +483,7 @@
 		B7C919872034B8D300111DBE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				B792221A203B5B390054681E /* DataStorage */,
 				B792220B203B2C140054681E /* ApiProvider */,
 				B7922204203A30980054681E /* ImageDownload */,
 				B7154B8B2038687B00DACF64 /* Decoderable */,
@@ -752,6 +774,7 @@
 				B7922206203A30AF0054681E /* ImageDownloadServicing.swift in Sources */,
 				B7C919982034BEFF00111DBE /* NetworkProviding.swift in Sources */,
 				B70AD69420398EB800E99E1B /* SearchViewModel.swift in Sources */,
+				B7A6DECD203B5EEA00241693 /* UserDefaults+DataStoraging.swift in Sources */,
 				B71DB58920377074003608AC /* RESTPaginatorServicing.swift in Sources */,
 				B7154B912038691900DACF64 /* JSONDecoder+Decoderable.swift in Sources */,
 				B79221FF203A22940054681E /* RESTPaginatorService+RESTPaginatorItemLoadable.swift in Sources */,
@@ -777,6 +800,7 @@
 				B7C919AA2034E3AD00111DBE /* Result+Equatable.swift in Sources */,
 				B7C919A22034C1A500111DBE /* NetworkOperationResumable.swift in Sources */,
 				B7154B99203880A800DACF64 /* URL+NetworkRequesting.swift in Sources */,
+				B792221C203B5B5F0054681E /* DataStoraging.swift in Sources */,
 				B70AD68820398BB600E99E1B /* URLSessionDataTask+NetworkOperationable.swift in Sources */,
 				B7C9198C2034BC6900111DBE /* NetworkServicing.swift in Sources */,
 				B71DB58D203772B0003608AC /* RESTPaginatorDelegate.swift in Sources */,
