@@ -18,27 +18,9 @@ protocol MovieViewModeling: Decodable {
 
 extension MovieViewModeling {
     var thumbnailURL: URL? {
-    }
-
-    func posterURLWith(domain: URL, withSize size: PosterSize) -> URL? {
-        guard let relativePath = posterRelativePath, var component = URLComponents(url: domain, resolvingAgainstBaseURL: true) else {
+        guard let imageRelatedPath = posterRelativePath else {
             return nil
         }
-
-        var additionalPath: String!
-        switch size {
-        case .w92:
-            additionalPath = "w92/"
-        case .w185:
-            additionalPath = "w185/"
-        case .w500:
-            additionalPath = "w500/"
-        case .w780:
-            additionalPath = "w780/"
-        }
-
-        component.path.append(contentsOf: additionalPath)
-        component.path.append(contentsOf: relativePath)
-        return component.url
+        return ApiProvider.shared.imageURL(withRelativePath: imageRelatedPath, withSize: .w185)
     }
 }

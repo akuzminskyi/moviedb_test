@@ -27,7 +27,6 @@ class MovieCell: UITableViewCell {
     private func updateUI(with viewModel: ItemModelState<MovieViewModel>) {
         switch viewModel {
         case .loaded(let model):
-            //model.posterURLWith(domain: <#T##URL#>, for: .w185)
             titleLabel.text = model.name
             releaseDataLabel.text = model.releaseDateString
             overviewLabel.text = model.overview
